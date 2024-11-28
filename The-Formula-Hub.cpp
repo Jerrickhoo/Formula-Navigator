@@ -102,15 +102,81 @@ void showAlgebraMenu() {
         cout << "21. Back to Main Menu\n";
         cout << "Enter your choice: ";
         cin >> option;
-        system("cls");
-
 
         if (option == 21) {
             return; // Return to the main menu
         }
+        system("cls");
 
         // Placeholder for actual functionality
         cout << "You selected option " << option << " in Algebra.\n";
+
+        switch (option){
+        case 1:
+            // Code / function
+            break;
+        case 2:
+            // Code / function
+            break;
+        case 3:
+            // Code / function
+            break;
+        case 4:
+            // Code / function
+            break;
+        case 5:
+            // Code / function
+            break;
+        case 6:
+            // Code / function
+            break;
+        case 7:
+            // Code / function
+            break;
+        case 8:
+            // Code / function
+            break;
+        case 9:
+            // Code / function
+            break;
+        case 10:
+            // Code / function
+            break;
+        case 11:
+            // Code / function
+            break;
+        case 12:
+            // Code / function
+            break;
+        case 13:
+            // Code / function
+            break;
+        case 14:
+            // Code / function
+            break;
+        case 15:
+            // Code / function
+            break;
+        case 16:
+            // Code / function
+            break;
+        case 17:
+            // Code / function
+            break;
+        case 18:
+            // Code / function
+            break;
+        case 19:
+            // Code / function
+            break;
+        case 20:
+            // Code / function
+            break;
+        default:
+            cout << "Invalid choice. Please try again.\n";
+            break;
+        }
+
     } while (option != 21);
 }
 
@@ -133,14 +199,172 @@ void showGeometryMenu() {
         cout << "51. Back to Main Menu\n";
         cout << "Enter your choice: ";
         cin >> option;
-        system("cls");
 
         if (option == 51) {
             return; // Return to the main menu
         }
+        system("cls");
+
 
         // Placeholder for actual functionality
         cout << "You selected option " << option << " in Geometry.\n";
+
+        switch (option){
+        case 1:
+            // Code / function
+            break;
+        case 2:
+            // Code / function
+            break;
+        case 3:
+            // Code / function
+            break;
+        case 4:
+            // Code / function
+            break;
+        case 5:
+            // Code / function
+            break;
+        case 6:
+            // Code / function
+            break;
+        case 7:
+            // Code / function
+            break;
+        case 8:
+            // Code / function
+            break;
+        case 9:
+            // Code / function
+            break;
+        case 10:
+            // Code / function
+            break;
+        case 11:
+            // Code / function
+            break;
+        case 12:
+            // Code / function
+            break;
+        case 13:
+            // Code / function
+            break;
+        case 14:
+            // Code / function
+            break;
+        case 15:
+            // Code / function
+            break;
+        case 16:
+            // Code / function
+            break;
+        case 17:
+            // Code / function
+            break;
+        case 18:
+            // Code / function
+            break;
+        case 19:
+            // Code / function
+            break;
+        case 20:
+            // Code / function
+            break;
+        case 21:
+            // Code / function
+            break;
+        case 22:
+            // Code / function
+            break;
+        case 23:
+            // Code / function
+            break;
+        case 24:
+            // Code / function
+            break;
+        case 25:
+            // Code / function
+            break;
+        case 26:
+            // Code / function
+            break;
+        case 27:
+            // Code / function
+            break;
+        case 28:
+            // Code / function
+            break;
+        case 29:
+            // Code / function
+            break;
+        case 30:
+            // Code / function
+            break;
+        case 31:
+            // Code / function
+            break;
+        case 32:
+            // Code / function
+            break;
+        case 33:
+            // Code / function
+            break;
+        case 34:
+            // Code / function
+            break;
+        case 35:
+            // Code / function
+            break;
+        case 36:
+            // Code / function
+            break;
+        case 37:
+            // Code / function
+            break;
+        case 38:
+            // Code / function
+            break;
+        case 39:
+            // Code / function
+            break;
+        case 40:
+            // Code / function
+            break;
+        case 41:
+            // Code / function
+            break;
+        case 42:
+            // Code / function
+            break;
+        case 43:
+            // Code / function
+            break;
+        case 44:
+            // Code / function
+            break;
+        case 45:
+            // Code / function
+            break;
+        case 46:
+            // Code / function
+            break;
+        case 47:
+            // Code / function
+            break;
+        case 48:
+            // Code / function
+            break;
+        case 49:
+            // Code / function
+            break;
+        case 50:
+            // Code / function
+            break;
+        default:
+            cout << "Invalid choice. Please try again.\n";
+            break;
+        }
+
     } while (option != 51);
 }
 
@@ -163,14 +387,171 @@ void showPhysicsMenu() {
         cout << "51. Back to Main Menu\n";
         cout << "Enter your choice: ";
         cin >> option;
-        system("cls");
 
         if (option == 51) {
             return; // Return to the main menu
         }
+        system("cls");
 
         // Placeholder for actual functionality
         cout << "You selected option " << option << " in Physics.\n";
+
+                switch (option){
+        case 1:
+            // Code / function
+            break;
+        case 2:
+            // Code / function
+            break;
+        case 3:
+            // Code / function
+            break;
+        case 4:
+            // Code / function
+            break;
+        case 5:
+            // Code / function
+            break;
+        case 6:
+            // Code / function
+            break;
+        case 7:
+            // Code / function
+            break;
+        case 8:
+            // Code / function
+            break;
+        case 9:
+            // Code / function
+            break;
+        case 10:
+            // Code / function
+            break;
+        case 11:
+            // Code / function
+            break;
+        case 12:
+            // Code / function
+            break;
+        case 13:
+            // Code / function
+            break;
+        case 14:
+            // Code / function
+            break;
+        case 15:
+            // Code / function
+            break;
+        case 16:
+            // Code / function
+            break;
+        case 17:
+            // Code / function
+            break;
+        case 18:
+            // Code / function
+            break;
+        case 19:
+            // Code / function
+            break;
+        case 20:
+            // Code / function
+            break;
+        case 21:
+            // Code / function
+            break;
+        case 22:
+            // Code / function
+            break;
+        case 23:
+            // Code / function
+            break;
+        case 24:
+            // Code / function
+            break;
+        case 25:
+            // Code / function
+            break;
+        case 26:
+            // Code / function
+            break;
+        case 27:
+            // Code / function
+            break;
+        case 28:
+            // Code / function
+            break;
+        case 29:
+            // Code / function
+            break;
+        case 30:
+            // Code / function
+            break;
+        case 31:
+            // Code / function
+            break;
+        case 32:
+            // Code / function
+            break;
+        case 33:
+            // Code / function
+            break;
+        case 34:
+            // Code / function
+            break;
+        case 35:
+            // Code / function
+            break;
+        case 36:
+            // Code / function
+            break;
+        case 37:
+            // Code / function
+            break;
+        case 38:
+            // Code / function
+            break;
+        case 39:
+            // Code / function
+            break;
+        case 40:
+            // Code / function
+            break;
+        case 41:
+            // Code / function
+            break;
+        case 42:
+            // Code / function
+            break;
+        case 43:
+            // Code / function
+            break;
+        case 44:
+            // Code / function
+            break;
+        case 45:
+            // Code / function
+            break;
+        case 46:
+            // Code / function
+            break;
+        case 47:
+            // Code / function
+            break;
+        case 48:
+            // Code / function
+            break;
+        case 49:
+            // Code / function
+            break;
+        case 50:
+            // Code / function
+            break;
+        default:
+            cout << "Invalid choice. Please try again.\n";
+            break;
+        }
+
     } while (option != 51);
 }
 
