@@ -1,6 +1,7 @@
 #include <iostream>
 #include <cmath>
 #include <cstdlib>
+#include <string>
 
 using namespace std;
 
@@ -10,6 +11,7 @@ void showAlgebraMenu();
 void showGeometryMenu();
 void showPhysicsMenu();
 void displayExitMessage();
+double validationChecker(const string& prompt); //doesnt check for negative number, if bawal negative, manually put it sa function.
 
 
 //todo 20 algebra formulas ---------------------------------------------------------------------------------------------------
@@ -102,11 +104,11 @@ void showAlgebraMenu() {
         cout << "21. Back to Main Menu\n";
         cout << "Enter your choice: ";
         cin >> option;
+        system("cls");
 
         if (option == 21) {
             return; // Return to the main menu
         }
-        system("cls");
 
         // Placeholder for actual functionality
         cout << "You selected option " << option << " in Algebra.\n";
@@ -180,6 +182,24 @@ void showAlgebraMenu() {
     } while (option != 21);
 }
 
+double validationChecker(const string& prompt){
+    double value;
+
+    while (true){
+        cout << prompt;
+        cin >> value;
+
+        if (cin.fail()){
+            cin.clear();
+            cin.ignore(1000, '\n');
+            cout << "Invalid Input, Please Try Again." << endl;
+        }
+        else{
+            return value;
+        }
+    }
+}
+
 //!---------------------------------------------------------------------------------------------------------------------------------------------------------
 
 void showGeometryMenu() {
@@ -199,11 +219,11 @@ void showGeometryMenu() {
         cout << "51. Back to Main Menu\n";
         cout << "Enter your choice: ";
         cin >> option;
+        system("cls");
 
         if (option == 51) {
             return; // Return to the main menu
         }
-        system("cls");
 
 
         // Placeholder for actual functionality
@@ -387,16 +407,16 @@ void showPhysicsMenu() {
         cout << "51. Back to Main Menu\n";
         cout << "Enter your choice: ";
         cin >> option;
+        system("cls");
 
         if (option == 51) {
             return; // Return to the main menu
         }
-        system("cls");
 
         // Placeholder for actual functionality
         cout << "You selected option " << option << " in Physics.\n";
 
-                switch (option){
+        switch (option){
         case 1:
             // Code / function
             break;
