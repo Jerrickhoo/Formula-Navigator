@@ -8,7 +8,8 @@ using namespace std;
 //! Calling formula section ---------------------------------------------------------------------------------------------------
 
 void showAlgebraMenu();
-void showGeometryMenu();
+void showGeometryMenu_2D();
+void showGeometryMenu_3D();
 void showPhysicsMenu();
 void displayExitMessage();
 double validationChecker(const string& prompt); //doesnt check for negative number, if bawal negative, manually put it sa function.
@@ -42,9 +43,10 @@ int main(){
         cout << "====================\n";
         cout << "Main Menu\n";
         cout << "1. Algebra\n";
-        cout << "2. Geometry\n";
-        cout << "3. Physics\n";
-        cout << "4. Exit\n";
+        cout << "2. Geometry 3D\n";
+        cout << "3. Geometry 3D\n";
+        cout << "4. Physics\n";
+        cout << "5. Exit\n";
         cout << "====================\n";
         cout << "Enter your choice: ";
         cin >> choice;
@@ -55,18 +57,21 @@ int main(){
             showAlgebraMenu();
             break;
         case 2:
-            showGeometryMenu();
+            showGeometryMenu_2D();
             break;
         case 3:
-            showPhysicsMenu();
+            showGeometryMenu_3D();
             break;
         case 4:
+            showPhysicsMenu();
+            break;
+        case 5:
             displayExitMessage();
             break;
         default:
             cout << "Invalid choice. Please try again.\n";
         }
-    } while (choice != 4);
+    } while (choice != 5);
 
 
 
@@ -202,32 +207,32 @@ double validationChecker(const string& prompt){
 
 //!---------------------------------------------------------------------------------------------------------------------------------------------------------
 
-void showGeometryMenu() {
+void showGeometryMenu_2D() {
     int option;
     do {
-        cout << "\n======== Geometry Menu ========\n";
-        cout << "1. ********* \t 11. ********* \t 21. ********* \t 31. ********* \t 41. *********\n";
-        cout << "2. ********* \t 12. ********* \t 22. ********* \t 32. ********* \t 42. *********\n";
-        cout << "3. ********* \t 13. ********* \t 23. ********* \t 33. ********* \t 43. *********\n";
-        cout << "4. ********* \t 14. ********* \t 24. ********* \t 34. ********* \t 44. *********\n";
-        cout << "5. ********* \t 15. ********* \t 25. ********* \t 35. ********* \t 45. *********\n";
-        cout << "6. ********* \t 16. ********* \t 26. ********* \t 36. ********* \t 46. *********\n";
-        cout << "7. ********* \t 17. ********* \t 27. ********* \t 37. ********* \t 47. *********\n";
-        cout << "8. ********* \t 18. ********* \t 28. ********* \t 38. ********* \t 48. *********\n";
-        cout << "9. ********* \t 19. ********* \t 29. ********* \t 39. ********* \t 49. *********\n";
-        cout << "10. ******** \t 20. ********* \t 30. ********* \t 40. ********* \t 50. *********\n";
-        cout << "51. Back to Main Menu\n";
+        cout << "\n======== Geometry 2D Menu ========\n";
+        cout << "1. ********* \t 11. ********* \t 21. ********* \n";
+        cout << "2. ********* \t 12. ********* \t 22. ********* \n";
+        cout << "3. ********* \t 13. ********* \t 23. ********* \n";
+        cout << "4. ********* \t 14. ********* \t 24. ********* \n";
+        cout << "5. ********* \t 15. ********* \t 25. ********* \n";
+        cout << "6. ********* \t 16. ********* \n";
+        cout << "7. ********* \t 17. ********* \n";
+        cout << "8. ********* \t 18. ********* \n";
+        cout << "9. ********* \t 19. ********* \n";
+        cout << "10. ******** \t 20. ********* \n";
+        cout << "26. Back to Main Menu\n";
         cout << "Enter your choice: ";
         cin >> option;
         system("cls");
 
-        if (option == 51) {
+        if (option == 26) {
             return; // Return to the main menu
         }
 
 
         // Placeholder for actual functionality
-        cout << "You selected option " << option << " in Geometry.\n";
+        cout << "You selected option " << option << " in Geometry 2D.\n";
 
         switch (option){
         case 1:
@@ -305,79 +310,117 @@ void showGeometryMenu() {
         case 25:
             // Code / function
             break;
-        case 26:
+        default:
+            cout << "Invalid choice. Please try again.\n";
+            break;
+        }
+
+    } while (option != 26);
+}
+
+//!---------------------------------------------------------------------------------------------------------------------------------------------------------
+
+void showGeometryMenu_3D() {
+    int option;
+    do {
+        cout << "\n======== Geometry 3D Menu ========\n";
+        cout << "1. ********* \t 11. ********* \t 21. ********* \n";
+        cout << "2. ********* \t 12. ********* \t 22. ********* \n";
+        cout << "3. ********* \t 13. ********* \t 23. ********* \n";
+        cout << "4. ********* \t 14. ********* \t 24. ********* \n";
+        cout << "5. ********* \t 15. ********* \t 25. ********* \n";
+        cout << "6. ********* \t 16. ********* \n";
+        cout << "7. ********* \t 17. ********* \n";
+        cout << "8. ********* \t 18. ********* \n";
+        cout << "9. ********* \t 19. ********* \n";
+        cout << "10. ******** \t 20. ********* \n";
+        cout << "26. Back to Main Menu\n";
+        cout << "Enter your choice: ";
+        cin >> option;
+        system("cls");
+
+        if (option == 26) {
+            return; // Return to the main menu
+        }
+
+
+        // Placeholder for actual functionality
+        cout << "You selected option " << option << " in Geometry 3D.\n";
+
+        switch (option){
+        case 1:
             // Code / function
             break;
-        case 27:
+        case 2:
             // Code / function
             break;
-        case 28:
+        case 3:
             // Code / function
             break;
-        case 29:
+        case 4:
             // Code / function
             break;
-        case 30:
+        case 5:
             // Code / function
             break;
-        case 31:
+        case 6:
             // Code / function
             break;
-        case 32:
+        case 7:
             // Code / function
             break;
-        case 33:
+        case 8:
             // Code / function
             break;
-        case 34:
+        case 9:
             // Code / function
             break;
-        case 35:
+        case 10:
             // Code / function
             break;
-        case 36:
+        case 11:
             // Code / function
             break;
-        case 37:
+        case 12:
             // Code / function
             break;
-        case 38:
+        case 13:
             // Code / function
             break;
-        case 39:
+        case 14:
             // Code / function
             break;
-        case 40:
+        case 15:
             // Code / function
             break;
-        case 41:
+        case 16:
             // Code / function
             break;
-        case 42:
+        case 17:
             // Code / function
             break;
-        case 43:
+        case 18:
             // Code / function
             break;
-        case 44:
+        case 19:
             // Code / function
             break;
-        case 45:
+        case 20:
             // Code / function
             break;
-        case 46:
+        case 21:
             // Code / function
             break;
-        case 47:
+        case 22:
             // Code / function
             break;
-        case 48:
+        case 23:
             // Code / function
             break;
-        case 49:
+        case 24:
             // Code / function
             break;
-        case 50:
+        case 25:
             // Code / function
             break;
         default:
@@ -385,8 +428,9 @@ void showGeometryMenu() {
             break;
         }
 
-    } while (option != 51);
+    } while (option != 26);
 }
+
 
 //!---------------------------------------------------------------------------------------------------------------------------------------------------------
 
