@@ -19,9 +19,11 @@ double validationChecker(const string& prompt); //doesnt check for negative numb
 
 
 
+//todo 25 geometry_2D formulas ---------------------------------------------------------------------------------------------------
 
-//todo 50 geometry formulas (divided between 2D and 3D) ---------------------------------------------------------------------------------------------------
 
+
+//todo 25 geometry_3D formulas ---------------------------------------------------------------------------------------------------
 
 
 
@@ -40,13 +42,13 @@ int main(){
     int choice;
 
     do {
-        cout << "====================\n";
-        cout << "Main Menu\n";
-        cout << "1. Algebra\n";
-        cout << "2. Geometry 3D\n";
-        cout << "3. Geometry 3D\n";
-        cout << "4. Physics\n";
-        cout << "5. Exit\n";
+        cout << "\n====================\n";
+        cout << "   Main Menu\n";
+        cout << "   1. Algebra\n";
+        cout << "   2. Geometry 3D\n";
+        cout << "   3. Geometry 3D\n";
+        cout << "   4. Physics\n";
+        cout << "   5. Exit\n";
         cout << "====================\n";
         cout << "Enter your choice: ";
         cin >> choice;
@@ -92,7 +94,30 @@ int main(){
 
 //! Defining formula section ---------------------------------------------------------------------------------------------------
 
-void showAlgebraMenu() {
+double validationChecker(const string& prompt){
+
+    double value;
+
+    while (true){
+        cout << prompt;
+        cin >> value;
+
+        if (cin.fail()){
+            cin.clear();
+            cin.ignore(1000, '\n');
+            cout << "Invalid Input, Please Try Again." << endl;
+        }
+        else{
+            return value;
+        }
+    }
+}
+
+
+//!---------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+void showAlgebraMenu(){
     int option;
     do {
         cout << "\n======== Algebra Menu ========\n";
@@ -187,27 +212,10 @@ void showAlgebraMenu() {
     } while (option != 21);
 }
 
-double validationChecker(const string& prompt){
-    double value;
-
-    while (true){
-        cout << prompt;
-        cin >> value;
-
-        if (cin.fail()){
-            cin.clear();
-            cin.ignore(1000, '\n');
-            cout << "Invalid Input, Please Try Again." << endl;
-        }
-        else{
-            return value;
-        }
-    }
-}
 
 //!---------------------------------------------------------------------------------------------------------------------------------------------------------
 
-void showGeometryMenu_2D() {
+void showGeometryMenu_2D(){
     int option;
     do {
         cout << "\n======== Geometry 2D Menu ========\n";
@@ -226,7 +234,7 @@ void showGeometryMenu_2D() {
         cin >> option;
         system("cls");
 
-        if (option == 26) {
+        if (option == 26){
             return; // Return to the main menu
         }
 
@@ -320,9 +328,9 @@ void showGeometryMenu_2D() {
 
 //!---------------------------------------------------------------------------------------------------------------------------------------------------------
 
-void showGeometryMenu_3D() {
+void showGeometryMenu_3D(){
     int option;
-    do {
+    do{
         cout << "\n======== Geometry 3D Menu ========\n";
         cout << "1. ********* \t 11. ********* \t 21. ********* \n";
         cout << "2. ********* \t 12. ********* \t 22. ********* \n";
@@ -339,7 +347,7 @@ void showGeometryMenu_3D() {
         cin >> option;
         system("cls");
 
-        if (option == 26) {
+        if (option == 26){
             return; // Return to the main menu
         }
 
@@ -428,15 +436,15 @@ void showGeometryMenu_3D() {
             break;
         }
 
-    } while (option != 26);
+    } while(option != 26);
 }
 
 
 //!---------------------------------------------------------------------------------------------------------------------------------------------------------
 
-void showPhysicsMenu() {
+void showPhysicsMenu(){
     int option;
-    do {
+    do{
         cout << "\n======== Physics Menu ========\n";
         cout << "1. ********* \t 11. ********* \t 21. ********* \t 31. ********* \t 41. *********\n";
         cout << "2. ********* \t 12. ********* \t 22. ********* \t 32. ********* \t 42. *********\n";
@@ -453,7 +461,7 @@ void showPhysicsMenu() {
         cin >> option;
         system("cls");
 
-        if (option == 51) {
+        if (option == 51){
             return; // Return to the main menu
         }
 
@@ -616,12 +624,12 @@ void showPhysicsMenu() {
             break;
         }
 
-    } while (option != 51);
+    } while(option != 51);
 }
 
 //!---------------------------------------------------------------------------------------------------------------------------------------------------------
 
-void displayExitMessage() {
+void displayExitMessage(){
     cout << "\nThank you for using the program!\n";
 }
 
