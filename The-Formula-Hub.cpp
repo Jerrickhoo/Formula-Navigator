@@ -781,7 +781,7 @@ double productOfSquareAlgebra(){
     b = getValidatedInputWithRange("Enter First Number (b): ", true);
     system("cls");
 
-    return (a + b) * (a - b);
+    return pow(a, 2) * pow(b, 2);
 
 }
 
@@ -798,7 +798,7 @@ double sumOfSquaresAlgebra(){
     b = getValidatedInputWithRange("Enter First Number (b): ", true);
     system("cls");
 
-    return pow(a, 2) + pow(b, 2);
+    return pow(a + b, 2) - 2 * a * b;
 }
 
 //? 5. Cube of Sum a3 + b3 = (a + b) (a2 - ab + b2) 
@@ -814,7 +814,7 @@ double cubeOfSumAlgebra(){
     b = getValidatedInputWithRange("Enter First Number (b): ", true);
     system("cls");
 
-    return pow(a, 3) + pow(b, 3);
+    return (a + b) * (pow(a, 2) - a * b + pow(b, 2));
 }
 
 //? 6. Cube of Difference a^3 - b^3 = (a - b)(a^2 + ab + b^2) 
@@ -830,7 +830,7 @@ double cubeOfDifferenceAlgebra(){
     b = getValidatedInputWithRange("Enter Second Number (b): ", true);
     system("cls");
 
-    return pow(a, 3) - pow(b, 3);
+    return (a - b) * (pow(a, 2) + a * b + pow(b, 2));
 
 }
 
