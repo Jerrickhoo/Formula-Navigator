@@ -21,6 +21,8 @@ void displayExitMessage();
 //? 1. Square of Sum (a + b)^2
 int squareOfSumAlgebra();
 
+//? 2. Square of Difference (a - b)^2
+int SquareOfDifferenceAlgebra();
 
 //todo 25 geometry_2D formulas ---------------------------------------------------------------------------------------------------
 
@@ -88,34 +90,61 @@ int main(){
 //! Defining formula section ---------------------------------------------------------------------------------------------------
 
 
+double getValidatedInputWithRange(const string& prompt, bool allowNegative = true){
+    double value;
+    while (true){
+        cout << prompt;
+        cin >> value;
+
+        if (cin.fail()){
+            cin.clear();
+            cin.ignore(10000, '\n');
+            cout << "\nInvalid input. Please enter a numeric value.\n";
+            system("pause");
+            system("cls");
+        }
+        else if (!allowNegative && value < 0){
+            cout << "\nNegative values are not allowed for this input. Try again.\n";
+            system("pause");
+            system("cls");
+        }
+        else{
+            return value;
+        }
+    }
+}
+
+
+//!---------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
 void showAlgebraMenu(){
     int option;
     int result = 0;
 
     do {
         cout << "============= Algebra Menu =============\n\n";
-        cout << "1. Square of Sum \t 11. *********\n";
-        cout << "      (a + b)^2  \t              \n";
-        cout << "2. ********* \t 12. *********\n";
-        cout << "      (a + b)^2  \t              \n";
-        cout << "3. ********* \t 13. *********\n";
-        cout << "      (a + b)^2  \t              \n";
-        cout << "4. ********* \t 14. *********\n";
-        cout << "      (a + b)^2  \t              \n";
-        cout << "5. ********* \t 15. *********\n";
-        cout << "      (a + b)^2  \t              \n";
-        cout << "6. ********* \t 16. *********\n";
-        cout << "      (a + b)^2  \t              \n";
-        cout << "7. ********* \t 17. *********\n";
-        cout << "      (a + b)^2  \t              \n";
-        cout << "8. ********* \t 18. *********\n";
-        cout << "      (a + b)^2  \t              \n";
-        cout << "9. ********* \t 19. *********\n";
-        cout << "      (a + b)^2  \t              \n";
-        cout << "10.*********\t 20. *********\n";
-        cout << "      (a + b)^2  \t              \n";
+        cout << "1. Square of Sum             \t 11. *********    \n";
+        cout << "      (a + b)^2              \t       (a + b)^2  \n";
+        cout << "3. *********                 \t 13. *********    \n";
+        cout << "      (a + b)^2              \t                  \n";
+        cout << "4. *********                 \t 14. *********    \n";
+        cout << "      (a + b)^2              \t                  \n";
+        cout << "5. *********                 \t 15. *********    \n";
+        cout << "      (a + b)^2              \t                  \n";
+        cout << "6. *********                 \t 16. *********    \n";
+        cout << "      (a + b)^2              \t                  \n";
+        cout << "7. *********                 \t 17. *********    \n";
+        cout << "      (a + b)^2              \t                  \n";
+        cout << "8. *********                 \t 18. *********    \n";
+        cout << "      (a + b)^2              \t                  \n";
+        cout << "9. *********                 \t 19. *********    \n";
+        cout << "      (a + b)^2              \t                  \n";
+        cout << "10.*********                 \t 20. *********    \n";
+        cout << "      (a + b)^2              \t                  \n";
 
-        cout << "21. Back to Main Menu\n";
+        cout << "\n21. Back to Main Menu\n";
         cout << "Enter your choice: ";
         cin >> option;
         system("cls");
@@ -198,33 +227,6 @@ void showAlgebraMenu(){
 }
 
 
-//!---------------------------------------------------------------------------------------------------------------------------------------------------------
-
-
-double getValidatedInputWithRange(const string& prompt, bool allowNegative = true){
-    double value;
-    while (true){
-        cout << prompt;
-        cin >> value;
-
-        if (cin.fail()){
-            cin.clear();
-            cin.ignore(10000, '\n');
-            cout << "\nInvalid input. Please enter a numeric value.\n";
-            system("pause");
-            system("cls");
-        }
-        else if (!allowNegative && value < 0){
-            cout << "\nNegative values are not allowed for this input. Try again.\n";
-            system("pause");
-            system("cls");
-        }
-        else{
-            return value;
-        }
-    }
-}
-
 
 //!---------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -232,18 +234,28 @@ double getValidatedInputWithRange(const string& prompt, bool allowNegative = tru
 void showGeometryMenu_2D(){
     int option;
     do {
-        cout << "\n======== Geometry 2D Menu ========\n";
-        cout << "1. ********* \t 11. ********* \t 21. ********* \n";
-        cout << "2. ********* \t 12. ********* \t 22. ********* \n";
-        cout << "3. ********* \t 13. ********* \t 23. ********* \n";
-        cout << "4. ********* \t 14. ********* \t 24. ********* \n";
-        cout << "5. ********* \t 15. ********* \t 25. ********* \n";
-        cout << "6. ********* \t 16. ********* \n";
-        cout << "7. ********* \t 17. ********* \n";
-        cout << "8. ********* \t 18. ********* \n";
-        cout << "9. ********* \t 19. ********* \n";
-        cout << "10. ******** \t 20. ********* \n";
-        cout << "26. Back to Main Menu\n";
+        cout << "============= Geometry 2D Menu =============\n\n";
+        cout << "1. Square of Sum             \t 11. *********                \t 21. *********      \n";
+        cout << "      (a + b)^2              \t       (a + b)^2              \t       (a + b)^2    \n";
+        cout << "2. Square of Sum             \t 12. *********                \t 22. *********      \n";
+        cout << "      (a + b)^2              \t       (a + b)^2              \t       (a + b)^2    \n";
+        cout << "3. *********                 \t 13. *********                \t 23. *********      \n";
+        cout << "      (a + b)^2              \t                              \t                    \n";
+        cout << "4. *********                 \t 14. *********                \t 24. *********      \n";
+        cout << "      (a + b)^2              \t                              \t                    \n";
+        cout << "5. *********                 \t 15. *********                \t 25. *********      \n";
+        cout << "      (a + b)^2              \t                                                    \n";
+        cout << "6. *********                 \t 16. *********                                      \n";
+        cout << "      (a + b)^2              \t                                                    \n";
+        cout << "7. *********                 \t 17. *********                                      \n";
+        cout << "      (a + b)^2              \t                                                    \n";
+        cout << "8. *********                 \t 18. *********                                      \n";
+        cout << "      (a + b)^2              \t                                                    \n";
+        cout << "9. *********                 \t 19. *********                                      \n";
+        cout << "      (a + b)^2              \t                                                    \n";
+        cout << "10.*********                 \t 20. *********                                      \n";
+        cout << "      (a + b)^2              \t                                                    \n";
+        cout << "\n26. Back to Main Menu\n";
         cout << "Enter your choice: ";
         cin >> option;
         system("cls");
@@ -345,18 +357,28 @@ void showGeometryMenu_2D(){
 void showGeometryMenu_3D(){
     int option;
     do{
-        cout << "\n======== Geometry 3D Menu ========\n";
-        cout << "1. ********* \t 11. ********* \t 21. ********* \n";
-        cout << "2. ********* \t 12. ********* \t 22. ********* \n";
-        cout << "3. ********* \t 13. ********* \t 23. ********* \n";
-        cout << "4. ********* \t 14. ********* \t 24. ********* \n";
-        cout << "5. ********* \t 15. ********* \t 25. ********* \n";
-        cout << "6. ********* \t 16. ********* \n";
-        cout << "7. ********* \t 17. ********* \n";
-        cout << "8. ********* \t 18. ********* \n";
-        cout << "9. ********* \t 19. ********* \n";
-        cout << "10. ******** \t 20. ********* \n";
-        cout << "26. Back to Main Menu\n";
+        cout << "============= Geometry 3D Menu =============\n\n";
+        cout << "1. Square of Sum             \t 11. *********                \t 21. *********      \n";
+        cout << "      (a + b)^2              \t       (a + b)^2              \t       (a + b)^2    \n";
+        cout << "2. Square of Sum             \t 12. *********                \t 22. *********      \n";
+        cout << "      (a + b)^2              \t       (a + b)^2              \t       (a + b)^2    \n";
+        cout << "3. *********                 \t 13. *********                \t 23. *********      \n";
+        cout << "      (a + b)^2              \t                              \t                    \n";
+        cout << "4. *********                 \t 14. *********                \t 24. *********      \n";
+        cout << "      (a + b)^2              \t                              \t                    \n";
+        cout << "5. *********                 \t 15. *********                \t 25. *********      \n";
+        cout << "      (a + b)^2              \t                                                    \n";
+        cout << "6. *********                 \t 16. *********                                      \n";
+        cout << "      (a + b)^2              \t                                                    \n";
+        cout << "7. *********                 \t 17. *********                                      \n";
+        cout << "      (a + b)^2              \t                                                    \n";
+        cout << "8. *********                 \t 18. *********                                      \n";
+        cout << "      (a + b)^2              \t                                                    \n";
+        cout << "9. *********                 \t 19. *********                                      \n";
+        cout << "      (a + b)^2              \t                                                    \n";
+        cout << "10.*********                 \t 20. *********                                      \n";
+        cout << "      (a + b)^2              \t                                                    \n";
+        cout << "\n26. Back to Main Menu\n";
         cout << "Enter your choice: ";
         cin >> option;
         system("cls");
@@ -458,18 +480,28 @@ void showGeometryMenu_3D(){
 void showPhysicsMenu(){
     int option;
     do{
-        cout << "\n======== Physics Menu ========\n";
-        cout << "1. ********* \t 11. ********* \t 21. ********* \t 31. ********* \t 41. *********\n";
-        cout << "2. ********* \t 12. ********* \t 22. ********* \t 32. ********* \t 42. *********\n";
-        cout << "3. ********* \t 13. ********* \t 23. ********* \t 33. ********* \t 43. *********\n";
-        cout << "4. ********* \t 14. ********* \t 24. ********* \t 34. ********* \t 44. *********\n";
-        cout << "5. ********* \t 15. ********* \t 25. ********* \t 35. ********* \t 45. *********\n";
-        cout << "6. ********* \t 16. ********* \t 26. ********* \t 36. ********* \t 46. *********\n";
-        cout << "7. ********* \t 17. ********* \t 27. ********* \t 37. ********* \t 47. *********\n";
-        cout << "8. ********* \t 18. ********* \t 28. ********* \t 38. ********* \t 48. *********\n";
-        cout << "9. ********* \t 19. ********* \t 29. ********* \t 39. ********* \t 49. *********\n";
-        cout << "10. ******** \t 20. ********* \t 30. ********* \t 40. ********* \t 50. *********\n";
-        cout << "51. Back to Main Menu\n";
+        cout << "============= Physics Menu =============\n\n";
+        cout << "1. Square of Sum    \t 11. *********       \t 21. *********       \t 31. *********         \t 41. *********   \n";
+        cout << "      (a + b)^2     \t       (a + b)^2     \t       (a + b)^2     \t       (a + b)^2       \t       (a + b)^2 \n";
+        cout << "2. Square of Sum    \t 12. *********       \t 22. *********       \t 32. *********         \t 42. *********   \n";
+        cout << "      (a + b)^2     \t       (a + b)^2     \t       (a + b)^2     \t       (a + b)^2       \t       (a + b)^2 \n";
+        cout << "3. *********        \t 13. *********       \t 23. *********       \t 33. *********         \t 43. *********   \n";
+        cout << "      (a + b)^2     \t                     \t                     \t                       \t                 \n";
+        cout << "4. *********        \t 14. *********       \t 24. *********       \t 34. *********         \t 44. *********   \n";
+        cout << "      (a + b)^2     \t                     \t                     \t                       \t                 \n";
+        cout << "5. *********        \t 15. *********       \t 25. *********       \t 35. *********         \t 45. *********   \n";
+        cout << "      (a + b)^2     \t                     \t                     \t                       \t                 \n";
+        cout << "6. *********        \t 16. *********       \t 26. *********       \t 36. *********         \t 46. *********   \n";
+        cout << "      (a + b)^2     \t                     \t                     \t                       \t                 \n";
+        cout << "7. *********        \t 17. *********       \t 27. *********       \t 37. *********         \t 47. *********   \n";
+        cout << "      (a + b)^2     \t                     \t                     \t                       \t                 \n";
+        cout << "8. *********        \t 18. *********       \t 28. *********       \t 38. *********         \t 48. *********   \n";
+        cout << "      (a + b)^2     \t                     \t                     \t                       \t                 \n";
+        cout << "9. *********        \t 19. *********       \t 29. *********       \t 39. *********         \t 49. *********   \n";
+        cout << "      (a + b)^2     \t                     \t                     \t                       \t                 \n";
+        cout << "10.*********        \t 20. *********       \t 30. *********       \t 40. *********         \t 50. *********   \n";
+        cout << "      (a + b)^2     \t                     \t                     \t                       \t                 \n";
+        cout << "\n51. Back to Main Menu\n";
         cout << "Enter your choice: ";
         cin >> option;
         system("cls");
@@ -674,7 +706,11 @@ int squareOfSumAlgebra(){
     return sum * sum;
 }
 
+//? 2. Square of Difference (a - b)^2 **********************************************************************************************************
+int SquareOfDifferenceAlgebra(){
 
+
+}
 
 
 //todo 25 geometry_2D formulas ---------------------------------------------------------------------------------------------------
