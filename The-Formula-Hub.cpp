@@ -22,7 +22,7 @@ void displayExitMessage();
 int squareOfSumAlgebra();
 
 //? 2. Square of Difference (a - b)^2
-int SquareOfDifferenceAlgebra();
+int squareOfDifferenceAlgebra();
 
 //todo 25 geometry_2D formulas ---------------------------------------------------------------------------------------------------
 
@@ -101,12 +101,12 @@ double getValidatedInputWithRange(const string& prompt, bool allowNegative = tru
             cin.ignore(10000, '\n');
             cout << "\nInvalid input. Please enter a numeric value.\n";
             system("pause");
-            system("cls");
+            cout << "\n\n";
         }
         else if (!allowNegative && value < 0){
             cout << "\nNegative values are not allowed for this input. Try again.\n";
             system("pause");
-            system("cls");
+            cout << "\n\n";
         }
         else{
             return value;
@@ -127,8 +127,8 @@ void showAlgebraMenu(){
         cout << "============= Algebra Menu =============\n\n";
         cout << "1. Square of Sum             \t 11. *********    \n";
         cout << "      (a + b)^2              \t       (a + b)^2  \n";
-        cout << "3. *********                 \t 13. *********    \n";
-        cout << "      (a + b)^2              \t                  \n";
+        cout << "3. Square of Difference      \t 13. *********    \n";
+        cout << "      (a - b)^2              \t                  \n";
         cout << "4. *********                 \t 14. *********    \n";
         cout << "      (a + b)^2              \t                  \n";
         cout << "5. *********                 \t 15. *********    \n";
@@ -157,12 +157,16 @@ void showAlgebraMenu(){
         case 1:
             result = squareOfSumAlgebra();
             cout << "============= You selected (Square of Sum) in Algebra =============\n\n";
-            cout << "The square of the sum is: " << result << endl;
+            cout << "The square of the Sum is: " << result << endl;
             system("pause");
             system("cls");
             break;
         case 2:
-            // Code / function
+            result = squareOfDifferenceAlgebra();
+            cout << "============= You selected (Square of Difference) in Algebra =============\n\n";
+            cout << "The square of the Difference is: " << result << endl;
+            system("pause");
+            system("cls");
             break;
         case 3:
             // Code / function
@@ -229,7 +233,6 @@ void showAlgebraMenu(){
 
 
 //!---------------------------------------------------------------------------------------------------------------------------------------------------------
-
 
 void showGeometryMenu_2D(){
     int option;
@@ -707,10 +710,36 @@ int squareOfSumAlgebra(){
 }
 
 //? 2. Square of Difference (a - b)^2 **********************************************************************************************************
-int SquareOfDifferenceAlgebra(){
+int squareOfDifferenceAlgebra(){
 
+    cout << "============= You selected (Square of Difference) in Algebra =============\n\n";
 
+    int number = 0;
+
+    number = getValidatedInputWithRange("Enter the number of elements: ", false);
+    system("cls");
+
+    cout << "============= You selected (Square of Difference) in Algebra =============\n\n";
+
+    int difference = 0;
+    cout << "Enter the numbers:\n";
+
+    for (int i = 0; i < number; ++i){
+        int num = getValidatedInputWithRange("Element " + to_string(i + 1) + ": ", true);
+        if (i == 0){
+            difference = num;
+        }
+        else{
+            difference -= num;
+        }
+    }
+
+    system("cls");
+    return difference * difference;
 }
+
+
+
 
 
 //todo 25 geometry_2D formulas ---------------------------------------------------------------------------------------------------
