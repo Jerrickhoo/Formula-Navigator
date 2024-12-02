@@ -2,21 +2,24 @@
 #include <cmath>
 #include <cstdlib>
 #include <string>
+#include <vector>
 
 using namespace std;
 
 //! Calling formula section ---------------------------------------------------------------------------------------------------
 
+double getValidatedInputWithRange(const string& prompt, bool allowNegative); // if allow negative, set bool to true, if not , set it to false
 void showAlgebraMenu();
 void showGeometryMenu_2D();
 void showGeometryMenu_3D();
 void showPhysicsMenu();
 void displayExitMessage();
-double validationChecker(const string& prompt); //doesnt check for negative number, if bawal negative, manually put it sa function.
 
 
 //todo 20 algebra formulas ---------------------------------------------------------------------------------------------------
 
+//? 1. Square of Sum (a + b)^2
+int squareOfSumAlgebra();
 
 
 //todo 25 geometry_2D formulas ---------------------------------------------------------------------------------------------------
@@ -42,7 +45,7 @@ int main(){
     int choice;
 
     do {
-        cout << "\n====================\n";
+        cout << "====================\n";
         cout << "   Main Menu\n";
         cout << "   1. Algebra\n";
         cout << "   2. Geometry 3D\n";
@@ -75,16 +78,6 @@ int main(){
         }
     } while (choice != 5);
 
-
-
-
-
-
-
-
-
-
-
     return 0;
 }
 
@@ -94,58 +87,50 @@ int main(){
 
 //! Defining formula section ---------------------------------------------------------------------------------------------------
 
-double validationChecker(const string& prompt){
-
-    double value;
-
-    while (true){
-        cout << prompt;
-        cin >> value;
-
-        if (cin.fail()){
-            cin.clear();
-            cin.ignore(1000, '\n');
-            cout << "Invalid Input, Please Try Again." << endl;
-        }
-        else{
-            return value;
-        }
-    }
-}
-
-
-//!---------------------------------------------------------------------------------------------------------------------------------------------------------
-
 
 void showAlgebraMenu(){
     int option;
+    int result = 0;
+
     do {
-        cout << "\n======== Algebra Menu ========\n";
-        cout << "1. ********* \t 11. *********\n";
+        cout << "============= Algebra Menu =============\n\n";
+        cout << "1. Square of Sum \t 11. *********\n";
+        cout << "      (a + b)^2  \t              \n";
         cout << "2. ********* \t 12. *********\n";
+        cout << "      (a + b)^2  \t              \n";
         cout << "3. ********* \t 13. *********\n";
+        cout << "      (a + b)^2  \t              \n";
         cout << "4. ********* \t 14. *********\n";
+        cout << "      (a + b)^2  \t              \n";
         cout << "5. ********* \t 15. *********\n";
+        cout << "      (a + b)^2  \t              \n";
         cout << "6. ********* \t 16. *********\n";
+        cout << "      (a + b)^2  \t              \n";
         cout << "7. ********* \t 17. *********\n";
+        cout << "      (a + b)^2  \t              \n";
         cout << "8. ********* \t 18. *********\n";
+        cout << "      (a + b)^2  \t              \n";
         cout << "9. ********* \t 19. *********\n";
-        cout << "10. ********* \t 20. *********\n";
+        cout << "      (a + b)^2  \t              \n";
+        cout << "10.*********\t 20. *********\n";
+        cout << "      (a + b)^2  \t              \n";
+
         cout << "21. Back to Main Menu\n";
         cout << "Enter your choice: ";
         cin >> option;
         system("cls");
 
-        if (option == 21) {
+        if (option == 21){
             return; // Return to the main menu
         }
 
-        // Placeholder for actual functionality
-        cout << "You selected option " << option << " in Algebra.\n";
-
         switch (option){
         case 1:
-            // Code / function
+            result = squareOfSumAlgebra();
+            cout << "============= You selected (Square of Sum) in Algebra =============\n\n";
+            cout << "The square of the sum is: " << result << endl;
+            system("pause");
+            system("cls");
             break;
         case 2:
             // Code / function
@@ -214,6 +199,35 @@ void showAlgebraMenu(){
 
 
 //!---------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+double getValidatedInputWithRange(const string& prompt, bool allowNegative = true){
+    double value;
+    while (true){
+        cout << prompt;
+        cin >> value;
+
+        if (cin.fail()){
+            cin.clear();
+            cin.ignore(10000, '\n');
+            cout << "\nInvalid input. Please enter a numeric value.\n";
+            system("pause");
+            system("cls");
+        }
+        else if (!allowNegative && value < 0){
+            cout << "\nNegative values are not allowed for this input. Try again.\n";
+            system("pause");
+            system("cls");
+        }
+        else{
+            return value;
+        }
+    }
+}
+
+
+//!---------------------------------------------------------------------------------------------------------------------------------------------------------
+
 
 void showGeometryMenu_2D(){
     int option;
@@ -436,9 +450,8 @@ void showGeometryMenu_3D(){
             break;
         }
 
-    } while(option != 26);
+    } while (option != 26);
 }
-
 
 //!---------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -624,7 +637,7 @@ void showPhysicsMenu(){
             break;
         }
 
-    } while(option != 51);
+    } while (option != 51);
 }
 
 //!---------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -635,12 +648,41 @@ void displayExitMessage(){
 
 
 
-//todo 20 algebra formulas ---------------------------------------------------------------------------------------------------
+//todo 20 algebra formulas ---------------------------------------------------------------------------------------------------------------------
+
+//? 1. Square of Sum (a + b)^2 **********************************************************************************************************
+int squareOfSumAlgebra(){
+
+    cout << "============= You selected (Square of Sum) in Algebra =============\n\n";
+
+    int number = 0, sum = 0;
+
+    number = getValidatedInputWithRange("Enter the number of elements: ", false);
+    system("cls");
+
+    cout << "============= You selected (Square of Sum) in Algebra =============\n\n";
+
+
+    cout << "Enter the numbers:\n";
+    for (int i = 0; i < number; ++i){
+        int num;
+        num = getValidatedInputWithRange("Element " + to_string(i + 1) + ": ", true);
+        sum += num;
+    }
+    system("cls");
+
+    return sum * sum;
+}
 
 
 
 
-//todo 50 geometry formulas (divided between 2D and 3D) ---------------------------------------------------------------------------------------------------
+//todo 25 geometry_2D formulas ---------------------------------------------------------------------------------------------------
+
+
+
+//todo 25 geometry_3D formulas ---------------------------------------------------------------------------------------------------
+
 
 
 
