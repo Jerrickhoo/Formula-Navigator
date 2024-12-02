@@ -19,10 +19,20 @@ void displayExitMessage();
 //todo 20 algebra formulas ---------------------------------------------------------------------------------------------------
 
 //? 1. Square of Sum (a + b)^2
-int squareOfSumAlgebra();
+double squareOfSumAlgebra();
 
 //? 2. Square of Difference (a - b)^2
-int squareOfDifferenceAlgebra();
+double squareOfDifferenceAlgebra();
+
+//? 3. Product of Squares a²b² = (a + b)(a - b) 
+double productOfSquareAlgebra();
+
+//? 4. Sum of Squares a2 + b2 = (a + b)2 - 2ab
+double sumOfSquaresAlgebra();
+
+//? 5. Cube of Sum a3 + b3 = (a + b) (a2 - ab + b2)
+double cubeOfSumAlgebra();
+
 
 //todo 25 geometry_2D formulas ---------------------------------------------------------------------------------------------------
 
@@ -121,18 +131,20 @@ double getValidatedInputWithRange(const string& prompt, bool allowNegative = tru
 
 void showAlgebraMenu(){
     int option;
-    int result = 0;
+    double result = 0;
 
     do {
         cout << "============= Algebra Menu =============\n\n";
         cout << "1. Square of Sum             \t 11. *********    \n";
-        cout << "      (a + b)^2              \t       (a + b)^2  \n";
-        cout << "3. Square of Difference      \t 13. *********    \n";
-        cout << "      (a - b)^2              \t                  \n";
-        cout << "4. *********                 \t 14. *********    \n";
-        cout << "      (a + b)^2              \t                  \n";
-        cout << "5. *********                 \t 15. *********    \n";
-        cout << "      (a + b)^2              \t                  \n";
+        cout << "     (a + b)^2               \t       (a + b)^2  \n";
+        cout << "2. Square of Difference      \t 11. *********    \n";
+        cout << "     (a - b)^2               \t       (a + b)^2  \n";
+        cout << "3. Product of Squares        \t 13. *********    \n";
+        cout << "     a2 + b2 = (a + b)2 - 2ab\t                  \n";
+        cout << "4. Sum of Squares            \t 14. *********    \n";
+        cout << "      a^2 + b^2              \t                  \n";
+        cout << "5. Cube of Sum               \t 15. *********    \n";
+        cout << "      (a + b)^3              \t                  \n";
         cout << "6. *********                 \t 16. *********    \n";
         cout << "      (a + b)^2              \t                  \n";
         cout << "7. *********                 \t 17. *********    \n";
@@ -169,13 +181,25 @@ void showAlgebraMenu(){
             system("cls");
             break;
         case 3:
-            // Code / function
+            result = productOfSquareAlgebra();
+            cout << "============= You selected (Product of Squares) in Algebra =============\n\n";
+            cout << "The Product of the Squares  is: " << result << endl;
+            system("pause");
+            system("cls");
             break;
         case 4:
-            // Code / function
+            result = sumOfSquaresAlgebra();
+            cout << "============= You selected (Sum of Squares) in Algebra =============\n\n";
+            cout << "The Product of the Squares  is: " << result << endl;
+            system("pause");
+            system("cls");
             break;
         case 5:
-            // Code / function
+            result = cubeOfSumAlgebra();
+            cout << "============= You selected (Cube of Sum) in Algebra =============\n\n";
+            cout << "The Cube of the Sum  is: " << result << endl;
+            system("pause");
+            system("cls");
             break;
         case 6:
             // Code / function
@@ -686,11 +710,12 @@ void displayExitMessage(){
 //todo 20 algebra formulas ---------------------------------------------------------------------------------------------------------------------
 
 //? 1. Square of Sum (a + b)^2 **********************************************************************************************************
-int squareOfSumAlgebra(){
+double squareOfSumAlgebra(){
 
     cout << "============= You selected (Square of Sum) in Algebra =============\n\n";
 
-    int number = 0, sum = 0;
+    int number = 0;
+    double sum = 0;
 
     number = getValidatedInputWithRange("Enter the number of elements: ", false);
     system("cls");
@@ -700,7 +725,7 @@ int squareOfSumAlgebra(){
 
     cout << "Enter the numbers:\n";
     for (int i = 0; i < number; ++i){
-        int num;
+        double num;
         num = getValidatedInputWithRange("Element " + to_string(i + 1) + ": ", true);
         sum += num;
     }
@@ -710,7 +735,7 @@ int squareOfSumAlgebra(){
 }
 
 //? 2. Square of Difference (a - b)^2 **********************************************************************************************************
-int squareOfDifferenceAlgebra(){
+double squareOfDifferenceAlgebra(){
 
     cout << "============= You selected (Square of Difference) in Algebra =============\n\n";
 
@@ -721,11 +746,11 @@ int squareOfDifferenceAlgebra(){
 
     cout << "============= You selected (Square of Difference) in Algebra =============\n\n";
 
-    int difference = 0;
+    double difference = 0;
     cout << "Enter the numbers:\n";
 
     for (int i = 0; i < number; ++i){
-        int num = getValidatedInputWithRange("Element " + to_string(i + 1) + ": ", true);
+        double num = getValidatedInputWithRange("Element " + to_string(i + 1) + ": ", true);
         if (i == 0){
             difference = num;
         }
@@ -738,8 +763,53 @@ int squareOfDifferenceAlgebra(){
     return difference * difference;
 }
 
+//? 3. Product of Squares a²b² = (a + b)(a - b) **********************************************************************************************************
+double productOfSquareAlgebra(){
 
+    double a, b;
 
+    cout << "============= You selected (Product of Squares) in Algebra =============\n\n";
+
+    cout << "Formula: a^2b^2 = (a + b)(a - b)" << endl;
+    a = getValidatedInputWithRange("Enter First Number (a): ", true);
+    b = getValidatedInputWithRange("Enter First Number (b): ", true);
+    system("cls");
+
+    return (a + b) * (a - b);
+
+}
+
+//? 4. Sum of Squares a2 + b2 = (a + b)2 - 2ab  **********************************************************************************************************
+double sumOfSquaresAlgebra(){
+
+    double a, b;
+
+    cout << "============= You selected (Product of Squares) in Algebra =============\n\n";
+
+    cout << "Formula: a2 + b2 = (a + b)2 - 2ab" << endl;
+
+    a = getValidatedInputWithRange("Enter First Number (a): ", true);
+    b = getValidatedInputWithRange("Enter First Number (b): ", true);
+    system("cls");
+
+    return pow(a, 2) + pow(b, 2);
+}
+
+//? 5. Cube of Sum a3 + b3 = (a + b) (a2 - ab + b2) **********************************************************************************************************
+double cubeOfSumAlgebra(){
+
+    double a, b;
+
+    cout << "============= You selected (Cube of Sum) in Algebra =============\n\n";
+
+    cout << "Formula: a3 + b3 = (a + b) (a2 - ab + b2)" << endl;
+
+    a = getValidatedInputWithRange("Enter First Number (a): ", true);
+    b = getValidatedInputWithRange("Enter First Number (b): ", true);
+    system("cls");
+
+    return pow(a + b, 2);
+}
 
 
 //todo 25 geometry_2D formulas ---------------------------------------------------------------------------------------------------
