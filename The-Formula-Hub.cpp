@@ -743,61 +743,35 @@ void displayExitMessage(){
 
 //todo 20 algebra formulas ---------------------------------------------------------------------------------------------------------------------
 
-//? 1. Square of Sum (a + b)^2 
+//? 1. Square of Sum (a + b)^2 = a^2 + 2ab + b^2
 double squareOfSumAlgebra(){
+    double a, b;
 
     cout << "============= You selected (Square of Sum) in Algebra =============\n\n";
+    cout << "Formula: (a + b)^2 = a^2 + 2ab + b^2" << endl;
 
-    int number = 0;
-    double sum = 0;
-
-    number = getValidatedInputWithRange("Enter the number of elements: ", false);
+    a = getValidatedInputWithRange("Enter First Number (a): ", true);
+    b = getValidatedInputWithRange("Enter Second Number (b): ", true);
     system("cls");
 
-    cout << "============= You selected (Square of Sum) in Algebra =============\n\n";
-
-
-    cout << "Enter the numbers:\n";
-    for (int i = 0; i < number; ++i){
-        double num;
-        num = getValidatedInputWithRange("Element " + to_string(i + 1) + ": ", true);
-        sum += num;
-    }
-    system("cls");
-
-    return sum * sum;
+    return pow(a, 2) + 2 * a * b + pow(b, 2);
 }
 
-//? 2. Square of Difference (a - b)^2 
+//? 2. Square of Difference (a - b)^2 = a^2 - 2ab + b^2
 double squareOfDifferenceAlgebra(){
+    double a, b;
 
     cout << "============= You selected (Square of Difference) in Algebra =============\n\n";
+    cout << "Formula: (a - b)^2 = a^2 - 2ab + b^2" << endl;
 
-    int number = 0;
-
-    number = getValidatedInputWithRange("Enter the number of elements: ", false);
+    a = getValidatedInputWithRange("Enter First Number (a): ", true);
+    b = getValidatedInputWithRange("Enter Second Number (b): ", true);
     system("cls");
 
-    cout << "============= You selected (Square of Difference) in Algebra =============\n\n";
-
-    double difference = 0;
-    cout << "Enter the numbers:\n";
-
-    for (int i = 0; i < number; ++i){
-        double num = getValidatedInputWithRange("Element " + to_string(i + 1) + ": ", true);
-        if (i == 0){
-            difference = num;
-        }
-        else{
-            difference -= num;
-        }
-    }
-
-    system("cls");
-    return difference * difference;
+    return pow(a, 2) - 2 * a * b + pow(b, 2);
 }
 
-//? 3. Product of Squares a²b² = (a + b)(a - b) 
+//? 3. Product of Squares a^2 * b^2 = (a^2) * (b^2)
 double productOfSquareAlgebra(){
 
     double a, b;
@@ -906,7 +880,7 @@ double differenceOfSquaresAlgebra(){
 }
 
 //? 10. Square of Sum for Three Terms (a + b + c)^2 = a^2 + b^2 + c^2 + 2ab + 2bc + 2ac
-double squareOfThreeTermsAlgebra() {
+double squareOfThreeTermsAlgebra(){
     double a, b, c;
 
     cout << "============= You selected (Square of Sum for Three Terms) in Algebra =============\n\n";
@@ -919,6 +893,158 @@ double squareOfThreeTermsAlgebra() {
 
     return pow(a, 2) + pow(b, 2) + pow(c, 2) + 2 * a * b + 2 * b * c + 2 * a * c;
 }
+
+//? 11. Special Sum of Cubes a^3 + b^3 + c^3 - 3abc = (a + b + c)(a^2 + b^2 + c^2 - ab - bc - ac)
+double specialSumOfCubesAlgebra(){
+    double a, b, c;
+
+    cout << "============= You selected (Special Sum of Cubes) in Algebra =============\n\n";
+    cout << "Formula: a^3 + b^3 + c^3 - 3abc = (a + b + c)(a^2 + b^2 + c^2 - ab - bc - ac)" << endl;
+
+    a = getValidatedInputWithRange("Enter First Number (a): ", true);
+    b = getValidatedInputWithRange("Enter Second Number (b): ", true);
+    c = getValidatedInputWithRange("Enter Third Number (c): ", true);
+    system("cls");
+
+    return (a + b + c) * (pow(a, 2) + pow(b, 2) + pow(c, 2) - a * b - b * c - a * c);
+}
+
+//? 12. Cubes When Sum is Zero  Condition: If a + b + c = 0, then a^3 + b^3 + c^3 = 3abc
+double cubesWhenSumZeroAlgebra(){
+    double a, b, c;
+
+    cout << "============= You selected (Cubes When Sum is Zero) in Algebra =============\n\n";
+    cout << "Condition: If a + b + c = 0, then a^3 + b^3 + c^3 = 3abc" << endl;
+
+    a = getValidatedInputWithRange("Enter First Number (a): ", true);
+    b = getValidatedInputWithRange("Enter Second Number (b): ", true);
+    c = getValidatedInputWithRange("Enter Third Number (c): ", true);
+    system("cls");
+
+    if (a + b + c != 0) {
+        cout << "Condition not satisfied (a + b + c ≠ 0). Returning 0.\n";
+        return 0;
+    }
+
+    return 3 * a * b * c;
+}
+
+//? 13. Fourth Power Identity a^4 + a^2 + 1 = (a^2 + a + 1)(a^2 - a + 1)
+double fourthPowerIdentityAlgebra(){
+    double a;
+
+    cout << "============= You selected (Fourth Power Identity) in Algebra =============\n\n";
+    cout << "Formula: a^4 + a^2 + 1 = (a^2 + a + 1)(a^2 - a + 1)" << endl;
+
+    a = getValidatedInputWithRange("Enter Number (a): ", true);
+    system("cls");
+
+    return (pow(a, 2) + a + 1) * (pow(a, 2) - a + 1);
+}
+
+//? 14. Special Fourth Power Plus Squares a^4 + a^2b^2 + b^4 = (a^2 + ab + b^2)(a^2 - ab + b^2)
+double specialFourthPowerAlgebra(){
+    double a, b;
+
+    cout << "============= You selected (Special Fourth Power Plus Squares) in Algebra =============\n\n";
+    cout << "Formula: a^4 + a^2b^2 + b^4 = (a^2 + ab + b^2)(a^2 - ab + b^2)" << endl;
+
+    a = getValidatedInputWithRange("Enter First Number (a): ", true);
+    b = getValidatedInputWithRange("Enter Second Number (b): ", true);
+    system("cls");
+
+    return (pow(a, 2) + a * b + pow(b, 2)) * (pow(a, 2) - a * b + pow(b, 2));
+}
+
+//? 15. Product of a and b with Sum of Squares ab(a^2 + b^2)(a + b)(a - b)
+double productWithSumOfSquares(){
+    double a, b;
+
+    cout << "============= You selected (Product with Sum of Squares) in Algebra =============\n\n";
+    cout << "Formula: ab(a^2 + b^2)(a + b)(a - b)" << endl;
+
+    a = getValidatedInputWithRange("Enter First Number (a): ", true);
+    b = getValidatedInputWithRange("Enter Second Number (b): ", true);
+    system("cls");
+
+    return a * b * (pow(a, 2) + pow(b, 2)) * (a + b) * (a - b);
+}
+
+//? 16. Difference with Fourth Power Terms (a + b)(a^2 + b^2)(a + b)(a - b)
+double fourthPowerDifference(){
+    double a, b;
+
+    cout << "============= You selected (Difference with Fourth Power Terms) in Algebra =============\n\n";
+    cout << "Formula: (a + b)(a^2 + b^2)(a + b)(a - b)" << endl;
+
+    a = getValidatedInputWithRange("Enter First Number (a): ", true);
+    b = getValidatedInputWithRange("Enter Second Number (b): ", true);
+    system("cls");
+
+    return (a + b) * (pow(a, 2) + pow(b, 2)) * (a + b) * (a - b);
+}
+
+//? 17. Exponent Product Rule a^(m+n)
+double exponentProductRule(){
+    double a, m, n;
+
+    cout << "============= You selected (Exponent Product Rule) in Algebra =============\n\n";
+    cout << "Formula: a^(m+n)" << endl;
+
+    a = getValidatedInputWithRange("Enter Base (a): ", true);
+    m = getValidatedInputWithRange("Enter First Exponent (m): ", true);
+    n = getValidatedInputWithRange("Enter Second Exponent (n): ", true);
+    system("cls");
+
+    return pow(a, m + n);
+}
+
+//? 18. Exponent Quotient Rule a^(m-n)
+double exponentQuotientRule(){
+    double a, m, n;
+
+    cout << "============= You selected (Exponent Quotient Rule) in Algebra =============\n\n";
+    cout << "Formula: a^(m-n)" << endl;
+
+    a = getValidatedInputWithRange("Enter Base (a): ", true);
+    m = getValidatedInputWithRange("Enter Numerator Exponent (m): ", true);
+    n = getValidatedInputWithRange("Enter Denominator Exponent (n): ", true);
+    system("cls");
+
+    return pow(a, m - n);
+}
+
+//? 19. Power Rule for Exponents (a^m)^n = a^(m*n)
+double powerRule(){
+    double a, m, n;
+
+    cout << "============= You selected (Power Rule for Exponents) in Algebra =============\n\n";
+    cout << "Formula: (a^m)^n = a^(m*n)" << endl;
+
+    a = getValidatedInputWithRange("Enter Base (a): ", true);
+    m = getValidatedInputWithRange("Enter First Exponent (m): ", true);
+    n = getValidatedInputWithRange("Enter Second Exponent (n): ", true);
+    system("cls");
+
+    return pow(a, m * n);
+}
+
+//? 20. Power of a Product (ab)^m = a^m * b^m
+double powerOfProduct(){
+    double a, b, m;
+
+    cout << "============= You selected (Power of a Product) in Algebra =============\n\n";
+    cout << "Formula: (ab)^m = a^m * b^m" << endl;
+
+    a = getValidatedInputWithRange("Enter First Base (a): ", true);
+    b = getValidatedInputWithRange("Enter Second Base (b): ", true);
+    m = getValidatedInputWithRange("Enter Exponent (m): ", true);
+    system("cls");
+
+    return pow(a, m) * pow(b, m);
+}
+
+
 
 
 
