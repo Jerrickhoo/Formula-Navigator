@@ -3,6 +3,7 @@
 #include <cstdlib>
 #include <string>
 #include <vector>
+#include <iomanip>
 
 using namespace std;
 
@@ -73,7 +74,7 @@ double exponentProductRuleAlgebra();
 double exponentQuotientRuleAlgebra();
 
 //? 19. Power Rule for Exponents (a^m)^n = a^(m*n)
-double powerRuleAlgebra();
+double powerRuleForExponentsAlgebra();
 
 //? 20. Power of a Product (ab)^m = a^m * b^m
 double powerOfProductAlgebra();
@@ -90,16 +91,15 @@ double powerOfProductAlgebra();
 //todo 50 physics formulas ---------------------------------------------------------------------------------------------------
 
 
-
-
-
-
-
+// random idea, idk if e butang
+// 1. setting sa main menu, pwede ka adjust pila ka decimals e output
 
 
 int main(){
 
     int choice;
+
+    cout << defaultfloat << setprecision(-1);
 
     do {
         cout << "====================\n";
@@ -110,11 +110,10 @@ int main(){
         cout << "   4. Physics\n";
         cout << "   5. Exit\n";
         cout << "====================\n";
-        cout << "Enter your choice: ";
-        cin >> choice;
+        choice = getValidatedInputWithRange("Enter your choice: ", false);
         system("cls");
 
-        switch (choice) {
+        switch (choice){
         case 1:
             showAlgebraMenu();
             break;
@@ -132,6 +131,8 @@ int main(){
             break;
         default:
             cout << "Invalid choice. Please try again.\n";
+            system("pause");
+            system("cls");
         }
     } while (choice != 5);
 
@@ -222,13 +223,14 @@ void showAlgebraMenu(){
         cout << "=================================================================================\n";
 
         cout << "\n21. Back to Main Menu\n";
-        cout << "Enter your choice: ";
-        cin >> option;
+        option = getValidatedInputWithRange("Enter your choice: ", false);
         system("cls");
 
         if (option == 21){
             return; // Return to the main menu
         }
+
+        cout << fixed << setprecision(2);
 
         switch (option){
         case 1:
@@ -297,39 +299,79 @@ void showAlgebraMenu(){
         case 10:
             result = squareOfThreeTermsAlgebra();
             cout << "============= You selected (Square of Sum for Three Terms) in Algebra =============\n\n";
-            cout << "The Square of the Sum for Three Terms  is: " << result << endl;
+            cout << "The Square of the Sum for Three Terms is: " << result << endl;
             system("pause");
             system("cls");
             break;
         case 11:
-            // Code / function
+            result = specialSumOfCubesAlgebra();
+            cout << "============= You selected (Special Sum of Cubes) in Algebra =============\n\n";
+            cout << "The Special Sum of the Cubes is: " << result << endl;
+            system("pause");
+            system("cls");
             break;
         case 12:
-            // Code / function
+            result = cubesWhenSumZeroAlgebra();
+            cout << "============= You selected (Cubes When Sum is Zero) in Algebra =============\n\n";
+            cout << "The Cubes When the Sum is Zero is: " << result << endl;
+            system("pause");
+            system("cls");
             break;
         case 13:
-            // Code / function
+            result = fourthPowerIdentityAlgebra();
+            cout << "============= You selected (Fourth Power Identity) in Algebra =============\n\n";
+            cout << "The Fourth Power Identity is: " << result << endl;
+            system("pause");
+            system("cls");
             break;
         case 14:
-            // Code / function
+            result = specialFourthPowerAlgebra();
+            cout << "============= You selected (Special Fourth Power Plus Squares) in Algebra =============\n\n";
+            cout << "The Special Fourth Power Plus Squares is: " << result << endl;
+            system("pause");
+            system("cls");
             break;
         case 15:
-            // Code / function
+            result = productWithSumOfSquaresAlgebra();
+            cout << "============= You selected (Product with Sum of Squares) in Algebra =============\n\n";
+            cout << "The Product with Sum of Squares is: " << result << endl;
+            system("pause");
+            system("cls");
             break;
         case 16:
-            // Code / function
+            result = fourthPowerDifferenceAlgebra();
+            cout << "============= You selected (Fourth Power Difference) in Algebra =============\n\n";
+            cout << "The Fourth Power Difference is: " << result << endl;
+            system("pause");
+            system("cls");
             break;
         case 17:
-            // Code / function
+            result = exponentProductRuleAlgebra();
+            cout << "============= You selected (Exponent Product Rule) in Algebra =============\n\n";
+            cout << "The Exponent Product Rule is: " << result << endl;
+            system("pause");
+            system("cls");
             break;
         case 18:
-            // Code / function
+            result = exponentQuotientRuleAlgebra();
+            cout << "============= You selected (Exponent Quotient Rule) in Algebra =============\n\n";
+            cout << "The Exponent Quotient Rule is: " << result << endl;
+            system("pause");
+            system("cls");
             break;
         case 19:
-            // Code / function
+            result = powerRuleForExponentsAlgebra();
+            cout << "============= You selected (Power Rule for Exponents) in Algebra =============\n\n";
+            cout << "The Power Rule for the Exponents is: " << result << endl;
+            system("pause");
+            system("cls");
             break;
         case 20:
-            // Code / function
+            result = powerOfProductAlgebra();
+            cout << "============= You selected (Power of a Product) in Algebra =============\n\n";
+            cout << "The Power of a Product is: " << result << endl;
+            system("pause");
+            system("cls");
             break;
         default:
             cout << "Invalid choice. Please try again.\n";
@@ -375,8 +417,7 @@ void showGeometryMenu_2D(){
         cout << "|                               |            Placeholder Formula       |                                   |\n";
         cout << "============================================================================================================\n";
         cout << "\n26. Back to Main Menu\n";
-        cout << "Enter your choice: ";
-        cin >> option;
+        option = getValidatedInputWithRange("Enter your choice: ", false);
         system("cls");
 
         if (option == 26){
@@ -505,8 +546,7 @@ void showGeometryMenu_3D(){
         cout << "|                               |            Placeholder Formula       |                                   |\n";
         cout << "============================================================================================================\n";
         cout << "\n26. Back to Main Menu\n";
-        cout << "Enter your choice: ";
-        cin >> option;
+        option = getValidatedInputWithRange("Enter your choice: ", false);
         system("cls");
 
         if (option == 26){
@@ -639,43 +679,41 @@ void showPhysicsMenu(){
             cout << "============================================================================================================\n";
             cout << "\n51. Next Page\n";
             cout << "52. Back to Main Menu\n";
-            cout << "Enter your choice: ";
+            option = getValidatedInputWithRange("Enter your choice: ", false);
         }
         else if (page == 2){
             cout << "========================================= Physics Menu (Page 2) ============================================\n";
             cout << "| 26.  Placeholder Title 1      |      34.  Placeholder Title 9        |     42. Placeholder Title 17      |\n";
-            cout << "|      Placeholder Formula      |           Placeholder Formula        |          Placeholder Formula      |\n";
+            cout << "|       Placeholder Formula     |           Placeholder Formula        |          Placeholder Formula      |\n";
             cout << "|----------------------------------------------------------------------------------------------------------|\n";
             cout << "| 27.  Placeholder Title 2      |      35. Placeholder Title 10        |     43. Placeholder Title 18      |\n";
-            cout << "|      Placeholder Formula      |           Placeholder Formula        |          Placeholder Formula      |\n";
+            cout << "|       Placeholder Formula     |           Placeholder Formula        |          Placeholder Formula      |\n";
             cout << "|----------------------------------------------------------------------------------------------------------|\n";
             cout << "| 28.  Placeholder Title 3      |      36. Placeholder Title 11        |     44. Placeholder Title 19      |\n";
-            cout << "|      Placeholder Formula      |           Placeholder Formula        |          Placeholder Formula      |\n";
+            cout << "|       Placeholder Formula     |           Placeholder Formula        |          Placeholder Formula      |\n";
             cout << "|----------------------------------------------------------------------------------------------------------|\n";
             cout << "| 29.  Placeholder Title 4      |      37. Placeholder Title 12        |     45. Placeholder Title 20      |\n";
-            cout << "|      Placeholder Formula      |           Placeholder Formula        |          Placeholder Formula      |\n";
+            cout << "|       Placeholder Formula     |           Placeholder Formula        |          Placeholder Formula      |\n";
             cout << "|----------------------------------------------------------------------------------------------------------|\n";
             cout << "| 30.  Placeholder Title 5      |      38. Placeholder Title 13        |     46. Placeholder Title 21      |\n";
-            cout << "|      Placeholder Formula      |           Placeholder Formula        |          Placeholder Formula      |\n";
+            cout << "|       Placeholder Formula     |           Placeholder Formula        |          Placeholder Formula      |\n";
             cout << "|----------------------------------------------------------------------------------------------------------|\n";
             cout << "| 31.  Placeholder Title 6      |      39. Placeholder Title 14        |     47. Placeholder Title 22      |\n";
-            cout << "|      Placeholder Formula      |           Placeholder Formula        |          Placeholder Formula      |\n";
+            cout << "|       Placeholder Formula     |           Placeholder Formula        |          Placeholder Formula      |\n";
             cout << "|----------------------------------------------------------------------------------------------------------|\n";
             cout << "| 32.  Placeholder Title 7      |      40. Placeholder Title 15        |     48. Placeholder Title 23      |\n";
-            cout << "|      Placeholder Formula      |           Placeholder Formula        |          Placeholder Formula      |\n";
+            cout << "|       Placeholder Formula     |           Placeholder Formula        |          Placeholder Formula      |\n";
             cout << "|----------------------------------------------------------------------------------------------------------|\n";
             cout << "| 33.  Placeholder Title 8      |      41. Placeholder Title 16        |     49. Placeholder Title 24      |\n";
-            cout << "|      Placeholder Formula      |           Placeholder Formula        |          Placeholder Formula      |\n";
+            cout << "|       Placeholder Formula     |           Placeholder Formula        |          Placeholder Formula      |\n";
             cout << "|----------------------------------------------------------------------------------------------------------|\n";
             cout << "|                               |       50. Placeholder Title 25       |                                   |\n";
             cout << "|                               |            Placeholder Formula       |                                   |\n";
             cout << "============================================================================================================\n";
             cout << "\n51. Previous Page\n";
             cout << "52. Back to Main Menu\n";
-            cout << "Enter your choice: ";
+            option = getValidatedInputWithRange("Enter your choice: ", false);
         }
-
-        cin >> option;
 
         if (option == 51 && page == 1){
             page = 2; // Go to Page 2
@@ -924,7 +962,7 @@ double sumOfSquaresAlgebra(){
 
     double a, b;
 
-    cout << "============= You selected (Product of Squares) in Algebra =============\n\n";
+    cout << "============= You selected (Sum of Squares) in Algebra =============\n\n";
 
     cout << "Formula: a^2 + b^2 = (a + b)^2 - 2ab" << endl;
     a = getValidatedInputWithRange("Enter First Number (a): ", true);
@@ -1042,6 +1080,7 @@ double specialSumOfCubesAlgebra(){
 
 //? 12. Cubes When Sum is Zero  Condition: If a + b + c = 0, then a^3 + b^3 + c^3 = 3abc
 double cubesWhenSumZeroAlgebra(){
+
     double a, b, c;
 
     cout << "============= You selected (Cubes When Sum is Zero) in Algebra =============\n\n";
@@ -1053,7 +1092,7 @@ double cubesWhenSumZeroAlgebra(){
     system("cls");
 
     if (abs(a + b + c) > 1e-9){
-        cout << "Condition not satisfied (a + b + c ≠ 0). Returning 0.\n";
+        cout << "Condition not satisfied (a + b + c != 0). Returning 0.\n";
         return 0;
     }
 
@@ -1147,7 +1186,7 @@ double exponentQuotientRuleAlgebra(){
 }
 
 //? 19. Power Rule for Exponents (a^m)^n = a^(m*n)
-double powerRuleAlgebra(){
+double powerRuleForExponentsAlgebra(){
     double a, m, n;
 
     cout << "============= You selected (Power Rule for Exponents) in Algebra =============\n\n";
