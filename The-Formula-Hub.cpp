@@ -36,6 +36,18 @@ double cubeOfSumAlgebra();
 //? 6. Cube of Difference a^3 - b^3 = (a - b)(a^2 + ab + b^2)
 double cubeOfDifferenceAlgebra();
 
+//? 7. Sum of Cubes a^3 + b^3 = (a + b)(a^2 - ab + b^2)
+double sumOfCubesAlgebra();
+
+//? 8. Difference of Cubes a^3 - b^3 = (a - b)(a^2 + ab + b^2)
+double differenceOfCubesAlgebra();
+
+//? 9. Difference of Two Squares (a + b)^2 - (a - b)^2 = 4ab
+double differenceOfSquaresAlgebra();
+
+//? 10. Square of Sum for Three Terms (a + b + c)^2 = a^2 + b^2 + c^2 + 2ab + 2bc + 2ac
+double squareOfThreeTermsAlgebra();
+
 //todo 25 geometry_2D formulas ---------------------------------------------------------------------------------------------------
 
 
@@ -149,14 +161,14 @@ void showAlgebraMenu(){
         cout << "    (a + b)^3                         \t                  \n";
         cout << "6. Cube of Difference                 \t 16. *********    \n";
         cout << "    (a - b)^3                         \t                  \n";
-        cout << "7. *********                          \t 17. *********    \n";
-        cout << "    (a + b)^2                         \t                  \n";
-        cout << "8. *********                          \t 18. *********    \n";
-        cout << "    (a + b)^2                         \t                  \n";
-        cout << "9. *********                          \t 19. *********    \n";
-        cout << "    (a + b)^2                         \t                  \n";
-        cout << "10.*********                          \t 20. *********    \n";
-        cout << "    (a + b)^2                         \t                  \n";
+        cout << "7. Sum of Cubes                       \t 17. *********    \n";
+        cout << "    a^3 + b^3                         \t                  \n";
+        cout << "8. Difference of Cubes                \t 18. *********    \n";
+        cout << "    (a - b)(a^2 + ab + b^2)           \t                  \n";
+        cout << "9. Difference of Two Squares          \t 19. *********    \n";
+        cout << "    (a + b)^2 - (a - b)^2             \t                  \n";
+        cout << "10. Square of Sum for Three Terms     \t 20. *********    \n";
+        cout << "    (a + b + c)^2                     \t                  \n";
 
         cout << "\n21. Back to Main Menu\n";
         cout << "Enter your choice: ";
@@ -211,16 +223,32 @@ void showAlgebraMenu(){
             system("cls");
             break;
         case 7:
-            // Code / function
+            result = sumOfCubesAlgebra();
+            cout << "============= You selected (Sum of Cubes) in Algebra =============\n\n";
+            cout << "The Sum of the Cubes  is: " << result << endl;
+            system("pause");
+            system("cls");
             break;
         case 8:
-            // Code / function
+            result = differenceOfCubesAlgebra();
+            cout << "============= You selected (Difference of Cubes) in Algebra =============\n\n";
+            cout << "The Difference of the Cubes  is: " << result << endl;
+            system("pause");
+            system("cls");
             break;
         case 9:
-            // Code / function
+            result = differenceOfSquaresAlgebra();
+            cout << "============= You selected (Difference of Two Squares) in Algebra =============\n\n";
+            cout << "The Difference of the Two Squares  is: " << result << endl;
+            system("pause");
+            system("cls");
             break;
         case 10:
-            // Code / function
+            result = squareOfThreeTermsAlgebra();
+            cout << "============= You selected (Square of Sum for Three Terms) in Algebra =============\n\n";
+            cout << "The Square of the Sum for Three Terms  is: " << result << endl;
+            system("pause");
+            system("cls");
             break;
         case 11:
             // Code / function
@@ -833,6 +861,66 @@ double cubeOfDifferenceAlgebra(){
     return (a - b) * (pow(a, 2) + a * b + pow(b, 2));
 
 }
+
+//? 7. Sum of Cubes a^3 + b^3 = (a + b)(a^2 - ab + b^2)
+double sumOfCubesAlgebra(){
+
+    double a, b;
+
+    cout << "============= You selected (Sum of Cubes) in Algebra =============\n\n";
+    cout << "Formula: a^3 + b^3 = (a + b)(a^2 - ab + b^2)" << endl;
+
+    a = getValidatedInputWithRange("Enter First Number (a): ", true);
+    b = getValidatedInputWithRange("Enter Second Number (b): ", true);
+    system("cls");
+
+    return (a + b) * (pow(a, 2) - a * b + pow(b, 2));
+}
+
+//? 8. Difference of Cubes a^3 - b^3 = (a - b)(a^2 + ab + b^2)
+double differenceOfCubesAlgebra(){
+    double a, b;
+
+    cout << "============= You selected (Difference of Cubes) in Algebra =============\n\n";
+    cout << "Formula: a^3 - b^3 = (a - b)(a^2 + ab + b^2)" << endl;
+
+    a = getValidatedInputWithRange("Enter First Number (a): ", true);
+    b = getValidatedInputWithRange("Enter Second Number (b): ", true);
+    system("cls");
+
+    return (a - b) * (pow(a, 2) + a * b + pow(b, 2));
+}
+
+//? 9. Difference of Two Squares (a + b)^2 - (a - b)^2 = 4ab
+double differenceOfSquaresAlgebra(){
+    double a, b;
+
+    cout << "============= You selected (Difference of Two Squares) in Algebra =============\n\n";
+    cout << "Formula: (a + b)^2 - (a - b)^2 = 4ab" << endl;
+
+    a = getValidatedInputWithRange("Enter First Number (a): ", true);
+    b = getValidatedInputWithRange("Enter Second Number (b): ", true);
+    system("cls");
+
+    return 4 * a * b;
+}
+
+//? 10. Square of Sum for Three Terms (a + b + c)^2 = a^2 + b^2 + c^2 + 2ab + 2bc + 2ac
+double squareOfThreeTermsAlgebra() {
+    double a, b, c;
+
+    cout << "============= You selected (Square of Sum for Three Terms) in Algebra =============\n\n";
+    cout << "Formula: (a + b + c)^2 = a^2 + b^2 + c^2 + 2ab + 2bc + 2ac" << endl;
+
+    a = getValidatedInputWithRange("Enter First Number (a): ", true);
+    b = getValidatedInputWithRange("Enter Second Number (b): ", true);
+    c = getValidatedInputWithRange("Enter Third Number (c): ", true);
+    system("cls");
+
+    return pow(a, 2) + pow(b, 2) + pow(c, 2) + 2 * a * b + 2 * b * c + 2 * a * c;
+}
+
+
 
 
 //todo 25 geometry_2D formulas ---------------------------------------------------------------------------------------------------
