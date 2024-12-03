@@ -18,19 +18,19 @@ void displayExitMessage();
 
 //todo 20 algebra formulas ---------------------------------------------------------------------------------------------------
 
-//? 1. Square of Sum (a + b)^2
+//? 1. Square of Sum (a + b)^2 = a^2 + 2ab + b^2
 double squareOfSumAlgebra();
 
-//? 2. Square of Difference (a - b)^2
+//? 2. Square of Difference (a - b)^2 = a^2 - 2ab + b^2
 double squareOfDifferenceAlgebra();
 
-//? 3. Product of Squares a²b² = (a + b)(a - b) 
+//? 3. Product of Squares a^2 * b^2 = (a^2) * (b^2)
 double productOfSquareAlgebra();
 
-//? 4. Sum of Squares a2 + b2 = (a + b)2 - 2ab
+//? 4. Sum of Squares a^2 + b^2 = (a + b)^2 - 2ab
 double sumOfSquaresAlgebra();
 
-//? 5. Cube of Sum a3 + b3 = (a + b) (a2 - ab + b2)
+//? 5. Cube of Sum a^3 + b^3 = (a + b)(a^2 - ab + b^2)
 double cubeOfSumAlgebra();
 
 //? 6. Cube of Difference a^3 - b^3 = (a - b)(a^2 + ab + b^2)
@@ -47,6 +47,37 @@ double differenceOfSquaresAlgebra();
 
 //? 10. Square of Sum for Three Terms (a + b + c)^2 = a^2 + b^2 + c^2 + 2ab + 2bc + 2ac
 double squareOfThreeTermsAlgebra();
+
+//? 11. Special Sum of Cubes a^3 + b^3 + c^3 - 3abc = (a + b + c)(a^2 + b^2 + c^2 - ab - bc - ac)
+double specialSumOfCubesAlgebra();
+
+//? 12. Cubes When Sum is Zero Condition: If a + b + c = 0, then a^3 + b^3 + c^3 = 3abc
+double cubesWhenSumZeroAlgebra();
+
+//? 13. Fourth Power Identity a^4 + a^2 + 1 = (a^2 + a + 1)(a^2 - a + 1)
+double fourthPowerIdentityAlgebra();
+
+//? 14. Special Fourth Power Plus Squares a^4 + a^2b^2 + b^4 = (a^2 + ab + b^2)(a^2 - ab + b^2)
+double specialFourthPowerAlgebra();
+
+//? 15. Product with Sum of Squares ab(a^2 + b^2)(a + b)(a - b)
+double productWithSumOfSquaresAlgebra();
+
+//? 16. Fourth Power Difference (a + b)(a^2 + b^2)(a + b)(a - b)
+double fourthPowerDifferenceAlgebra();
+
+//? 17. Exponent Product Rule a^(m+n)
+double exponentProductRuleAlgebra();
+
+//? 18. Exponent Quotient Rule a^(m-n)
+double exponentQuotientRuleAlgebra();
+
+//? 19. Power Rule for Exponents (a^m)^n = a^(m*n)
+double powerRuleAlgebra();
+
+//? 20. Power of a Product (ab)^m = a^m * b^m
+double powerOfProductAlgebra();
+
 
 //todo 25 geometry_2D formulas ---------------------------------------------------------------------------------------------------
 
@@ -754,7 +785,7 @@ double squareOfSumAlgebra(){
     b = getValidatedInputWithRange("Enter Second Number (b): ", true);
     system("cls");
 
-    return pow(a, 2) + 2 * a * b + pow(b, 2);
+    return pow(a + b, 2);
 }
 
 //? 2. Square of Difference (a - b)^2 = a^2 - 2ab + b^2
@@ -780,7 +811,7 @@ double productOfSquareAlgebra(){
 
     cout << "Formula: a^2 * b^2 = (a^2) * (b^2)" << endl;
     a = getValidatedInputWithRange("Enter First Number (a): ", true);
-    b = getValidatedInputWithRange("Enter First Number (b): ", true);
+    b = getValidatedInputWithRange("Enter Second Number (b): ", true);
     system("cls");
 
     return pow(a, 2) * pow(b, 2);
@@ -794,8 +825,7 @@ double sumOfSquaresAlgebra(){
 
     cout << "============= You selected (Product of Squares) in Algebra =============\n\n";
 
-    cout << "Formula: a^2 + b^2" << endl;
-
+    cout << "Formula: a^2 + b^2 = (a + b)^2 - 2ab" << endl;
     a = getValidatedInputWithRange("Enter First Number (a): ", true);
     b = getValidatedInputWithRange("Enter First Number (b): ", true);
     system("cls");
@@ -921,10 +951,11 @@ double cubesWhenSumZeroAlgebra(){
     c = getValidatedInputWithRange("Enter Third Number (c): ", true);
     system("cls");
 
-    if (a + b + c != 0) {
+    if (abs(a + b + c) > 1e-9){
         cout << "Condition not satisfied (a + b + c ≠ 0). Returning 0.\n";
         return 0;
     }
+
 
     return 3 * a * b * c;
 }
@@ -957,7 +988,7 @@ double specialFourthPowerAlgebra(){
 }
 
 //? 15. Product of a and b with Sum of Squares ab(a^2 + b^2)(a + b)(a - b)
-double productWithSumOfSquares(){
+double productWithSumOfSquaresAlgebra(){
     double a, b;
 
     cout << "============= You selected (Product with Sum of Squares) in Algebra =============\n\n";
@@ -971,7 +1002,7 @@ double productWithSumOfSquares(){
 }
 
 //? 16. Difference with Fourth Power Terms (a + b)(a^2 + b^2)(a + b)(a - b)
-double fourthPowerDifference(){
+double fourthPowerDifferenceAlgebra(){
     double a, b;
 
     cout << "============= You selected (Difference with Fourth Power Terms) in Algebra =============\n\n";
@@ -981,11 +1012,11 @@ double fourthPowerDifference(){
     b = getValidatedInputWithRange("Enter Second Number (b): ", true);
     system("cls");
 
-    return (a + b) * (pow(a, 2) + pow(b, 2)) * (a + b) * (a - b);
+    return pow(a + b, 2) * (pow(a, 2) + pow(b, 2)) * (a - b);
 }
 
 //? 17. Exponent Product Rule a^(m+n)
-double exponentProductRule(){
+double exponentProductRuleAlgebra(){
     double a, m, n;
 
     cout << "============= You selected (Exponent Product Rule) in Algebra =============\n\n";
@@ -1000,7 +1031,7 @@ double exponentProductRule(){
 }
 
 //? 18. Exponent Quotient Rule a^(m-n)
-double exponentQuotientRule(){
+double exponentQuotientRuleAlgebra(){
     double a, m, n;
 
     cout << "============= You selected (Exponent Quotient Rule) in Algebra =============\n\n";
@@ -1015,7 +1046,7 @@ double exponentQuotientRule(){
 }
 
 //? 19. Power Rule for Exponents (a^m)^n = a^(m*n)
-double powerRule(){
+double powerRuleAlgebra(){
     double a, m, n;
 
     cout << "============= You selected (Power Rule for Exponents) in Algebra =============\n\n";
@@ -1030,7 +1061,7 @@ double powerRule(){
 }
 
 //? 20. Power of a Product (ab)^m = a^m * b^m
-double powerOfProduct(){
+double powerOfProductAlgebra(){
     double a, b, m;
 
     cout << "============= You selected (Power of a Product) in Algebra =============\n\n";
