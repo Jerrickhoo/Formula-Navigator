@@ -85,7 +85,121 @@ double powerOfProductAlgebra();
 
 
 //todo 25 geometry_3D formulas ---------------------------------------------------------------------------------------------------
+// 1. Cube
+double cubeSurfaceArea(double a) {
+    return 6 * a * a;
+}
 
+double cubeVolume(double a) {
+    return a * a * a;
+}
+
+// 2. Rectangular Prism
+double rectangularPrismSurfaceArea(double a, double b, double c) {
+    return 2 * (a * b + b * c + c * a);
+}
+
+double rectangularPrismVolume(double a, double b, double c) {
+    return a * b * c;
+}
+
+// 3. Sphere
+double sphereSurfaceArea(double r) {
+    return 4 * M_PI * r * r;
+}
+
+double sphereVolume(double r) {
+    return (4.0 / 3.0) * M_PI * r * r * r;
+}
+
+// 4. Cylinder
+double cylinderLateralSurfaceArea(double r, double h) {
+    return 2 * M_PI * r * h;
+}
+
+double cylinderTotalSurfaceArea(double r, double h) {
+    return 2 * M_PI * r * (h + r);
+}
+
+double cylinderVolume(double r, double h) {
+    return M_PI * r * r * h;
+}
+
+// 5. Cone
+double coneLateralSurfaceArea(double r, double h) {
+    return M_PI * r * sqrt(r * r + h * h);
+}
+
+double coneTotalSurfaceArea(double r, double h) {
+    return M_PI * r * (r + sqrt(r * r + h * h));
+}
+
+double coneVolume(double r, double h) {
+    return (1.0 / 3.0) * M_PI * r * r * h;
+}
+
+// 6. Hemisphere
+double hemisphereSurfaceArea(double r) {
+    return 3 * M_PI * r * r;
+}
+
+double hemisphereVolume(double r) {
+    return (2.0 / 3.0) * M_PI * r * r * r;
+}
+
+// 7. Tetrahedron
+double tetrahedronSurfaceArea(double a) {
+    return sqrt(3) * a * a;
+}
+
+double tetrahedronVolume(double a) {
+    return (a * a * a) / (6 * sqrt(2));
+}
+
+// 8. Square Pyramid
+double pyramidLateralSurfaceArea(double a, double h) {
+    return 2 * a * sqrt((a / 2) * (a / 2) + h * h);
+}
+
+double pyramidTotalSurfaceArea(double a, double h) {
+    return a * a + 2 * a * sqrt((a / 2) * (a / 2) + h * h);
+}
+
+double pyramidVolume(double a, double h) {
+    return (1.0 / 3.0) * a * a * h;
+}
+
+// 9. Triangular Prism
+double triangularPrismSurfaceArea(double a, double b, double h) {
+    return a * b + 2 * a * h + b * h;
+}
+
+double triangularPrismVolume(double a, double b, double h) {
+    return (1.0 / 2.0) * a * b * h;
+}
+
+// 10. Ellipsoid
+double ellipsoidVolume(double a, double b, double c) {
+    return (4.0 / 3.0) * M_PI * a * b * c;
+}
+
+// 11. Torus
+double torusSurfaceArea(double R, double r) {
+    return 4 * M_PI * M_PI * R * r;
+}
+
+double torusVolume(double R, double r) {
+    return 2 * M_PI * M_PI * R * r * r;
+}
+
+// 12. Frustum of Cone
+double frustumLateralSurfaceArea(double r1, double r2, double h) {
+    return M_PI * (r1 + r2) * sqrt((r1 - r2) * (r1 - r2) + h * h);
+}
+
+double frustumVolume(double r1, double r2, double h) {
+    return (1.0 / 3.0) * M_PI * h * (r1 * r1 + r1 * r2 + r2 * r2);
+}
 
 
 //todo 50 physics formulas ---------------------------------------------------------------------------------------------------
@@ -106,7 +220,7 @@ int main(){
         cout << "\t|       Main Menu     |\n";   
         cout << "\t|                     |\n";           
         cout << "\t| 1. Algebra          |\n";      
-        cout << "\t| 2. Geometry 3D      |\n";  
+        cout << "\t| 2. Geometry 2D      |\n";  
         cout << "\t| 3. Geometry 3D      |\n";  
         cout << "\t| 4. Physics          |\n";      
         cout << "\t| 5. Exit             |\n";        
