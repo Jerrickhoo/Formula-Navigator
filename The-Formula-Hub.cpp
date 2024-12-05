@@ -831,7 +831,7 @@ void showPhysicsMenu(){
             page = 1; // Go back to Page 1
             system("cls");
         }
-        else if (option == 52 && page == 1 || option == 52 && page == 2){
+        else if (option == 0 && page == 1 || option == 0 && page == 2){
             system("cls");
             return; // Exit to Main Menu
         }
