@@ -85,122 +85,147 @@ double powerOfProductAlgebra();
 
 
 //todo 25 geometry_3D formulas ---------------------------------------------------------------------------------------------------
-// 1. Cube
+#include <iostream>
+#include <cmath>
+
+// Geometry 3D Menu Functions
+
+// 1. Cube Surface Area
 double cubeSurfaceArea(double a) {
     return 6 * a * a;
 }
 
+// 2. Cube Volume
 double cubeVolume(double a) {
     return a * a * a;
 }
 
-// 2. Rectangular Prism
+// 3. Rectangular Prism Surface Area
 double rectangularPrismSurfaceArea(double a, double b, double c) {
     return 2 * (a * b + b * c + c * a);
 }
 
+// 4. Rectangular Prism Volume
 double rectangularPrismVolume(double a, double b, double c) {
     return a * b * c;
 }
 
-// 3. Sphere
+// 5. Sphere Surface Area
 double sphereSurfaceArea(double r) {
     return 4 * M_PI * r * r;
 }
 
+// 6. Sphere Volume
 double sphereVolume(double r) {
     return (4.0 / 3.0) * M_PI * r * r * r;
 }
 
-// 4. Cylinder
-double cylinderLateralSurfaceArea(double r, double h) {
-    return 2 * M_PI * r * h;
+// 7. Cylinder Surface Area
+double cylinderSurfaceArea(double r, double h) {
+    return 2 * M_PI * r * (r + h);
 }
 
-double cylinderTotalSurfaceArea(double r, double h) {
-    return 2 * M_PI * r * (h + r);
-}
-
+// 8. Cylinder Volume
 double cylinderVolume(double r, double h) {
     return M_PI * r * r * h;
 }
 
-// 5. Cone
-double coneLateralSurfaceArea(double r, double h) {
-    return M_PI * r * sqrt(r * r + h * h);
+// 9. Triangular Prism Surface Area
+double triangularPrismSurfaceArea(double a, double b, double c, double h) {
+    return a * b + a * h + b * h;
 }
 
-double coneTotalSurfaceArea(double r, double h) {
-    return M_PI * r * (r + sqrt(r * r + h * h));
-}
-
-double coneVolume(double r, double h) {
-    return (1.0 / 3.0) * M_PI * r * r * h;
-}
-
-// 6. Hemisphere
-double hemisphereSurfaceArea(double r) {
-    return 3 * M_PI * r * r;
-}
-
-double hemisphereVolume(double r) {
-    return (2.0 / 3.0) * M_PI * r * r * r;
-}
-
-// 7. Tetrahedron
-double tetrahedronSurfaceArea(double a) {
-    return sqrt(3) * a * a;
-}
-
-double tetrahedronVolume(double a) {
-    return (a * a * a) / (6 * sqrt(2));
-}
-
-// 8. Square Pyramid
-double pyramidLateralSurfaceArea(double a, double h) {
-    return 2 * a * sqrt((a / 2) * (a / 2) + h * h);
-}
-
-double pyramidTotalSurfaceArea(double a, double h) {
-    return a * a + 2 * a * sqrt((a / 2) * (a / 2) + h * h);
-}
-
-double pyramidVolume(double a, double h) {
-    return (1.0 / 3.0) * a * a * h;
-}
-
-// 9. Triangular Prism
-double triangularPrismSurfaceArea(double a, double b, double h) {
-    return a * b + 2 * a * h + b * h;
-}
-
+// 10. Triangular Prism Volume
 double triangularPrismVolume(double a, double b, double h) {
     return (1.0 / 2.0) * a * b * h;
 }
 
-// 10. Ellipsoid
+// 11. Ellipsoid Volume
 double ellipsoidVolume(double a, double b, double c) {
     return (4.0 / 3.0) * M_PI * a * b * c;
 }
 
-// 11. Torus
-double torusSurfaceArea(double R, double r) {
-    return 4 * M_PI * M_PI * R * r;
-}
-
+// 12. Torus Volume
 double torusVolume(double R, double r) {
     return 2 * M_PI * M_PI * R * r * r;
 }
 
-// 12. Frustum of Cone
+// 13. Frustum Lateral Surface Area
 double frustumLateralSurfaceArea(double r1, double r2, double h) {
     return M_PI * (r1 + r2) * sqrt((r1 - r2) * (r1 - r2) + h * h);
 }
 
+// 14. Frustum Volume
 double frustumVolume(double r1, double r2, double h) {
     return (1.0 / 3.0) * M_PI * h * (r1 * r1 + r1 * r2 + r2 * r2);
 }
 
+// 15. Cone Surface Area
+double coneSurfaceArea(double r, double h) {
+    return M_PI * r * (sqrt(h * h + r * r) + r);
+}
+
+// 16. Cone Volume
+double coneVolume(double r, double h) {
+    return (1.0 / 3.0) * M_PI * r * r * h;
+}
+
+// 17. Oblique Cone Surface Area
+double obliqueConeSurfaceArea(double r, double slantHeight) {
+    return M_PI * r * (r + slantHeight);
+}
+
+// 18. Frustum Surface Area
+double frustumSurfaceArea(double r1, double r2, double h) {
+    return M_PI * (r1 + r2) * sqrt((r1 - r2) * (r1 - r2) + h * h);
+}
+
+// 19. Torus Surface Area
+double torusSurfaceArea(double R, double r) {
+    return 4 * M_PI * M_PI * R * r;
+}
+
+// 20. Hemisphere Surface Area
+double hemisphereSurfaceArea(double r) {
+    return 3 * M_PI * r * r;
+}
+
+// 21. Hemisphere Volume
+double hemisphereVolume(double r) {
+    return (2.0 / 3.0) * M_PI * r * r * r;
+}
+
+// 22. Tetrahedron Surface Area
+double tetrahedronSurfaceArea(double a) {
+    return sqrt(3) * a * a;
+}
+
+// 23. Tetrahedron Volume
+double tetrahedronVolume(double a) {
+    return (a * a * a) / (6 * sqrt(2));
+}
+
+// 24. Square Pyramid Surface Area
+double squarePyramidSurfaceArea(double a, double h) {
+    return a * a + 2 * a * sqrt((a / 2.0) * (a / 2.0) + h * h);
+}
+
+// 25. Hollow Cylinder Volume
+double hollowCylinderVolume(double R, double r, double h) {
+    return M_PI * h * (R * R - r * r);
+}
+
+// Main function for testing
+int main() {
+    // Test a few functions
+    std::cout << "1. Cube Surface Area (a=2): " << cubeSurfaceArea(2) << "\n";
+    std::cout << "2. Cube Volume (a=3): " << cubeVolume(3) << "\n";
+    std::cout << "6. Sphere Volume (r=4): " << sphereVolume(4) << "\n";
+    std::cout << "15. Cone Surface Area (r=3, h=5): " << coneSurfaceArea(3, 5) << "\n";
+    std::cout << "25. Hollow Cylinder Volume (R=5, r=3, h=10): " << hollowCylinderVolume(5, 3, 10) << "\n";
+
+    return 0;
+}
 
 //todo 50 physics formulas ---------------------------------------------------------------------------------------------------
 
@@ -616,43 +641,35 @@ void showGeometryMenu_2D(){
 void showGeometryMenu_3D(){
     int option;
     do{
-cout << "\t================================================ Geometry 3D Menu =============================================\n";
-cout << "\t| 1.  Cube Surface Area         |      9.  Triangular Prism Surface Area |     17. Frustum Surface Area       |\n";
-cout << "\t|      6 * a * a                |           a * b + 2 * a * h + b * h    |      M_PI * (r1 + r2) * sqrt(      |\n";
-cout << "\t|                               |                                        |          (r1 - r2) * (r1 - r2)  +  |\n";
-cout << "\t|                               |                                        |          h * h)                    |\n";
-cout << "\t|-------------------------------------------------------------------------------------------------------------|\n";
-cout << "\t| 2.  Cube Volume               |      10. Triangular Prism Volume       |     18. Frustum Volume             |\n";
-cout << "\t|      a * a * a                |           (1.0 / 2.0) * a * b * h      |      (1.0 / 3.0) * M_PI * h * (    |\n";
-cout << "\t|                               |                                        |          r1 * r1 + r1 * r2 +       |\n";
-cout << "\t|                               |                                        |          r2 * r2)                  |\n";
-cout << "\t|-------------------------------------------------------------------------------------------------------------|\n";
-cout << "\t| 3.  Rectangular Prism         |   11. Ellipsoid Volume                 |     19. Torus Surface Area         |\n";
-cout << "\t|      Surface Area             |       (4.0 / 3.0) * M_PI * a * b * c   |       4 * M_PI * M_PI * R * r      |\n";
-cout << "\t|   2 * (a * b + b * c + c * a) |                                        |                                    |\n";
-cout << "\t|-------------------------------------------------------------------------------------------------------------|\n";
-cout << "\t| 4.  Rectangular Prism Volume  |      12. Torus Volume                  |     20. Torus Volume               |\n";
-cout << "\t|      a * b * c                |      2 * M_PI * M_PI * R * r * r       |      2 * M_PI * M_PI * R * r * r   |\n";
-cout << "\t|-------------------------------------------------------------------------------------------------------------|\n";
-cout << "\t| 5.  Sphere Surface Area       |      13. Frustum Lateral Surface Area |     21. Hemisphere Surface Area     |\n";
-cout << "\t|      4 * M_PI * r * r         |      M_PI * (r1 + r2) * sqrt(         |      3 * M_PI * r * r               |\n";
-cout << "\t|                               |          (r1 - r2) * (r1 - r2) +      |                                     |\n";
-cout << "\t|                               |          h * h)                       |                                     |\n";
-cout << "\t|-------------------------------------------------------------------------------------------------------------|\n";
-cout << "\t| 6.  Sphere Volume             |      14. Frustum Volume               |     22. Hemisphere Volume           |\n";
-cout << "\t|      (4.0 / 3.0) * M_PI * r * |      (1.0 / 3.0) * M_PI * h * (       |      (2.0 / 3.0) * M_PI * r * r *   |\n";
-cout << "\t|      r * r                    |          r1 * r1 + r1 * r2 + r2 * r2) |          r                          |\n";
-cout << "\t|-------------------------------------------------------------------------------------------------------------|\n";
-cout << "\t| 7.  Cylinder Surface Area     |      15. Cone Surface Area            |     23. Tetrahedron Surface Area    |\n";
-cout << "\t|      2 * M_PI * r * (h + r)   |      M_PI * r * sqrt(r * r + h * h)   |      sqrt(3) * a * a                |\n";
-cout << "\t|-------------------------------------------------------------------------------------------------------------|\n";
-cout << "\t| 8.  Cylinder Volume           |      16. Cone Volume                  |     24. Tetrahedron Volume          |\n";
-cout << "\t|      M_PI * r * r * h         |      (1.0 / 3.0) * M_PI * r * r * h   |      (a * a * a) / (6 * sqrt(2))    |\n";
-cout << "\t|-------------------------------------------------------------------------------------------------------------|\n";
-cout << "\t|                               |      25. Square Pyramid Surface Area  |                                     |\n";
-cout << "\t|                               |      a * a + 2 * a * sqrt((a / 2) *   |                                     |\n";
-cout << "\t|                               |          (a / 2) + h * h)             |                                     |\n";
-cout << "\t===============================================================================================================\n";
+cout << "\t========================================= Geometry Menu 3D ============================================\n";
+cout << "\t|  1. Cube Surface Area           |  9. Triangular Prism Surface Area       |  17. Oblique Cone Surface Area   |\n";
+cout << "\t|    Formula: 6 * a^2             |    Formula: a * b + a * h + b * h       |    Formula: π * r * (r + slantHeight)  |\n";
+cout << "\t|------------------------------------------------------------------------------------------------------|\n";
+cout << "\t|  2. Cube Volume                 |  10. Triangular Prism Volume            |  18. Frustum Surface Area       |\n";
+cout << "\t|    Formula: a^3                 |    Formula: (1/2) * a * b * h           |    Formula: π * (r1 + r2) * sqrt((r1 - r2)^2 + h^2) |\n";
+cout << "\t|------------------------------------------------------------------------------------------------------|\n";
+cout << "\t|  3. Rectangular Prism Surface Area |  11. Ellipsoid Volume                     |  19. Torus Surface Area        |\n";
+cout << "\t|    Formula: 2 * (a * b + b * c + c * a) |    Formula: (4/3) * π * a * b * c    |  Formula: 4 * π^2 * R * r^2   |\n";
+cout << "\t|------------------------------------------------------------------------------------------------------|\n";
+cout << "\t|  4. Rectangular Prism Volume     |  12. Torus Volume                           |  20. Hemisphere Surface Area   |\n";
+cout << "\t|    Formula: a * b * c           |    Formula: 2 * π^2 * R * r^2                |    Formula: 3 * π * r^2         |\n";
+cout << "\t|------------------------------------------------------------------------------------------------------|\n";
+cout << "\t|  5. Sphere Surface Area         |  13. Frustum Lateral Surface Area                    |  21. Hemisphere Volume         |\n";
+cout << "\t|    Formula: 4 * π * r^2         |    Formula: π * (r1 + r2) * sqrt((r1 - r2)^2 + h^2)  |    Formula: (2/3) * π * r^3    |\n";
+cout << "\t|------------------------------------------------------------------------------------------------------|\n";
+cout << "\t|  6. Sphere Volume               |  14. Frustum Volume                                    |  22. Tetrahedron Surface Area  |\n";
+cout << "\t|    Formula: (4/3) * π * r^3     |    Formula: (1/3) * π * h * (r1^2 + r1 * r2 + r2^2)    |    Formula: √3 * a^2            |\n";
+cout << "\t|------------------------------------------------------------------------------------------------------|\n";
+cout << "\t|  7. Cylinder Surface Area       |  15. Cone Surface Area                     |  23. Tetrahedron Volume        |\n";
+cout << "\t|    Formula: 2 * π * r * (r + h) |    Formula: π * r * (√(h^2 + r^2) + r)     |    Formula: (a^3) / (6√2)       |\n";
+cout << "\t|------------------------------------------------------------------------------------------------------|\n";
+cout << "\t|  8. Cylinder Volume             |  16. Cone Volume                    |  24. Square Pyramid Surface Area |\n";
+cout << "\t|    Formula: π * r^2 * h         |    Formula: (1/3) * π * r^2 * h     |    Formula: a^2 + 2 * a * sqrt((a / 2)^2 + h^2) |\n";
+cout << "\t|------------------------------------------------------------------------------------------------------|\n";
+cout << "\t|                                |  25. Hollow Cylinder Volume        |                                   |\n";
+cout << "\t|                                |    Formula: π * h * (R^2 - r^2)    |                                   |\n";
+cout << "\t=========================================================================================================\n";
+
         cout << "\n0. Back to Main Menu\n";
         option = getValidatedInputWithRange("Enter your choice(0-25): ", false);
         system("cls");
@@ -667,8 +684,11 @@ cout << "\t=====================================================================
 
         switch (option){
         case 1:
-            // Code / function
-            break;
+  result = cubeSurfaceArea();
+            cout << "============= You selected (Square of Sum) in Algebra =============\n\n";
+            cout << "The square of the Sum is: " << result << "\n\n\n";
+            system("pause");
+            system("cls");            break;
         case 2:
             // Code / function
             break;
