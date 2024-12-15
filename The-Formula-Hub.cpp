@@ -82,6 +82,79 @@ double powerOfProductAlgebra();
 
 //todo 25 geometry_2D formulas ---------------------------------------------------------------------------------------------------
 
+//? 1. 
+
+
+//? 2. 
+
+
+//? 3. 
+
+
+//? 4. 
+
+
+//? 5. 
+
+
+//? 6. 
+
+
+//? 7. 
+
+
+//? 8. 
+
+
+//? 9. 
+
+
+//? 10.
+
+
+//? 11.
+
+
+//? 12.
+
+
+//? 13.
+
+
+//? 14.
+
+
+//? 15.
+
+
+//? 16.
+
+
+//? 17.
+
+
+//? 18.
+
+
+//? 19.
+
+
+//? 20.
+
+
+//? 21.
+
+
+//? 22.
+
+
+//? 23.
+
+
+//? 24.
+
+
+//? 25.
 
 
 //todo 25 geometry_3D formulas ---------------------------------------------------------------------------------------------------
@@ -164,6 +237,165 @@ double hollowCylinderVolume();
 
 //todo 50 physics formulas ---------------------------------------------------------------------------------------------------
 
+//* Marque -------------------------------------------------------------------------------------------------------------------------
+
+//? 1. Average Speed: avg_speed = total_distance / total_time
+double calculateAverageSpeed();
+
+//? 2. Average Acceleration: avg_acceleration = (v_final - v_initial) / t
+double calculateAverageAcceleration();
+
+//? 3. Centripetal Force: F_c = m * v^2 / r 
+double calculateCentripetalForce();
+
+//? 4. Torque: τ = F * r 
+double calculateTorque();
+
+//? 5. Linear Expansion: ΔL = α * L_initial * ΔT 
+
+
+//? 6. Total Energy: E_total = KE + PE 
+
+
+//? 7. Magnetic Force: F = q * v * B 
+double calculateMagneticForce();
+
+//? 8. Magnetic Flux: Φ = B * A * cos(theta) 
+
+
+//? 9. Induced EMF: EMF = -dΦ / dt 
+
+
+//? 10. Period of a Wave: T = 1 / f 
+
+
+//? 11. Intensity: I = P / A 
+
+
+//? 12. Spring Potential Energy: PE_spring = 0.5 * k * x^2 
+
+
+//? 13. Angular Momentum: L = I * ω 
+
+
+//? 14. Impulse: J = F * Δt 
+
+
+//? 15. Elastic Collision: v1_final = (m1 - m2) / (m1 + m2) * v1_initial + (2 * m2 / (m1 + m2)) * v2_initial 
+
+
+//? 16. Inelastic Collision: v_final = (m1 * v1_initial + m2 * v2_initial) / (m1 + m2) 
+
+
+//? 17. Mechanical Advantage: MA = output_force / input_force 
+
+
+//? 18. Energy Efficiency: efficiency = (useful_energy / total_energy) * 100 
+
+
+//? 19. Thermal Conductivity: Q/t = k * A * (T1 - T2) / d 
+
+
+//? 20. Angular Velocity: ω = θ / t 
+
+
+//? 21. Power in Rotational Motion: P = τ * ω 
+
+
+//? 22. Elastic Potential Energy: E_elastic = 0.5 * k * x^2 
+
+
+//? 23. Rotational Kinetic Energy: KE_rotational = 0.5 * I * ω^2 
+
+
+//? 24. Gravitational Acceleration: g = GM / r^2 
+
+
+//? 25. Work in Rotational Motion: W = τ * θ
+
+
+//* Jesse -------------------------------------------------------------------------------------------------------------------------
+
+//? 26.
+
+
+//? 27.
+
+
+//? 28.
+
+
+//? 29.
+
+
+//? 30.
+
+
+//? 31.
+
+
+//? 32.
+
+
+//? 33.
+
+
+//? 34.
+
+
+//? 35.
+
+
+//? 36.
+
+
+//? 37.
+
+
+//? 38.
+
+
+//? 39.
+
+
+//? 40.
+
+
+//? 41.
+
+
+//? 42.
+
+
+//? 43.
+
+
+//? 44.
+
+
+//? 45.
+
+
+//? 46.
+
+
+//? 47.
+
+
+//? 48.
+
+
+//? 49.
+
+
+//? 50.
+
+
+
+
+
+
+//!-----------------------------------------------------------------------------------------------------------------------------------------
 
 // random idea, idk if e butang
 // 1. setting sa main menu, pwede ka adjust pila ka decimals e output
@@ -991,7 +1223,7 @@ void displayExitMessage(){
 
 //todo 20 algebra formulas ---------------------------------------------------------------------------------------------------------------------
 
-//? 1. Square of Sum (a + b)^2 = a^2 + 2ab + b^2
+//? 1. Square of Sum: (a + b)^2 = a^2 + 2ab + b^2
 double squareOfSumAlgebra(){
     double a, b;
 
@@ -1002,7 +1234,7 @@ double squareOfSumAlgebra(){
     b = getValidatedInputWithRange("Enter Second Number (b): ", true);
     system("cls");
 
-    return pow(a + b, 2);
+    return pow(a, 2) + 2 * a * b + pow(b, 2);
 }
 
 //? 2. Square of Difference (a - b)^2 = a^2 - 2ab + b^2
@@ -1294,17 +1526,13 @@ double powerOfProductAlgebra(){
 }
 
 
-
-
-
-
 //todo 25 geometry_2D formulas ---------------------------------------------------------------------------------------------------
 
 
 
 //todo 25 geometry_3D formulas ---------------------------------------------------------------------------------------------------
 
-// 1. Cube Surface Area
+//? 1. Cube Surface Area
 double cubeSurfaceArea(){
     double a;
 
@@ -1316,122 +1544,122 @@ double cubeSurfaceArea(){
     return 6 * a * a;
 }
 
-// 2. Cube Volume
+//? 2. Cube Volume
 double cubeVolume(){
     return a * a * a;
 }
 
-// 3. Rectangular Prism Surface Area
+//? 3. Rectangular Prism Surface Area
 double rectangularPrismSurfaceArea(){
     return 2 * (a * b + b * c + c * a);
 }
 
-// 4. Rectangular Prism Volume
+//? 4. Rectangular Prism Volume
 double rectangularPrismVolume(){
     return a * b * c;
 }
 
-// 5. Sphere Surface Area
+//? 5. Sphere Surface Area
 double sphereSurfaceArea(){
     return 4 * M_PI * r * r;
 }
 
-// 6. Sphere Volume
+//? 6. Sphere Volume
 double sphereVolume(){
     return (4.0 / 3.0) * M_PI * r * r * r;
 }
 
-// 7. Cylinder Surface Area
+//? 7. Cylinder Surface Area
 double cylinderSurfaceArea(){
     return 2 * M_PI * r * (r + h);
 }
 
-// 8. Cylinder Volume
+//? 8. Cylinder Volume
 double cylinderVolume(){
     return M_PI * r * r * h;
 }
 
-// 9. Triangular Prism Surface Area
+//? 9. Triangular Prism Surface Area
 double triangularPrismSurfaceArea(){
     return a * b + a * h + b * h;
 }
 
-// 10. Triangular Prism Volume
+//? 10. Triangular Prism Volume
 double triangularPrismVolume(){
     return (1.0 / 2.0) * a * b * h;
 }
 
-// 11. Ellipsoid Volume
+//? 11. Ellipsoid Volume
 double ellipsoidVolume(){
     return (4.0 / 3.0) * M_PI * a * b * c;
 }
 
-// 12. Torus Volume
+//? 12. Torus Volume
 double torusVolume(){
     return 2 * M_PI * M_PI * R * r * r;
 }
 
-// 13. Frustum Lateral Surface Area
+//? 13. Frustum Lateral Surface Area
 double frustumLateralSurfaceArea(){
     return M_PI * (r1 + r2) * sqrt((r1 - r2) * (r1 - r2) + h * h);
 }
 
-// 14. Frustum Volume
+//? 14. Frustum Volume
 double frustumVolume(){
     return (1.0 / 3.0) * M_PI * h * (r1 * r1 + r1 * r2 + r2 * r2);
 }
 
-// 15. Cone Surface Area
+//? 15. Cone Surface Area
 double coneSurfaceArea(){
     return M_PI * r * (sqrt(h * h + r * r) + r);
 }
 
-// 16. Cone Volume
+//? 16. Cone Volume
 double coneVolume(){
     return (1.0 / 3.0) * M_PI * r * r * h;
 }
 
-// 17. Oblique Cone Surface Area
+//? 17. Oblique Cone Surface Area
 double obliqueConeSurfaceArea(){
     return M_PI * r * (r + slantHeight);
 }
 
-// 18. Frustum Surface Area
+//? 18. Frustum Surface Area
 double frustumSurfaceArea(){
     return M_PI * (r1 + r2) * sqrt((r1 - r2) * (r1 - r2) + h * h);
 }
 
-// 19. Torus Surface Area
+//? 19. Torus Surface Area
 double torusSurfaceArea(){
     return 4 * M_PI * M_PI * R * r;
 }
 
-// 20. Hemisphere Surface Area
+//? 20. Hemisphere Surface Area
 double hemisphereSurfaceArea(){
     return 3 * M_PI * r * r;
 }
 
-// 21. Hemisphere Volume
+//? 21. Hemisphere Volume
 double hemisphereVolume(){
     return (2.0 / 3.0) * M_PI * r * r * r;
 }
 
-// 22. Tetrahedron Surface Area
+//? 22. Tetrahedron Surface Area
 double tetrahedronSurfaceArea(){
     return sqrt(3) * a * a;
 }
 
-// 23. Tetrahedron Volume
+//? 23. Tetrahedron Volume
 double tetrahedronVolume(){
     return (a * a * a) / (6 * sqrt(2));
 }
 
-// 24. Square Pyramid Surface Area
+//? 24. Square Pyramid Surface Area
 double squarePyramidSurfaceArea(){
     return a * a + 2 * a * sqrt((a / 2.0) * (a / 2.0) + h * h);
 }
 
-// 25. Hollow Cylinder Volume
+//? 25. Hollow Cylinder Volume
 double hollowCylinderVolume(){
     return M_PI * h * (R * R - r * r);
 }
@@ -1439,6 +1667,242 @@ double hollowCylinderVolume(){
 
 
 //todo 50 physics formulas ---------------------------------------------------------------------------------------------------
+
+//* Marque ---------------------------------------------------------------------------------------------------
+
+//? 1. Average Speed Calculation Function
+double calculateAverageSpeed(){
+    double total_distance, total_time;
+
+    do {
+        cout << "============= You selected (Average Speed Calculation) =============\n\n";
+        cout << "Formula: avg_speed = total_distance / total_time\n";
+        cout << "Where:\n";
+        cout << "  avg_speed = Average Speed\n";
+        cout << "  total_distance = Total Distance (in kilometers or miles)\n";
+        cout << "  total_time = Total Time (in hours)\n\n";
+
+        total_distance = getValidatedInputWithRange("Enter the total distance (in kilometers or miles): ", false);
+        total_time = getValidatedInputWithRange("Enter the total time (in hours): ", false);
+
+        if (total_time == 0) {
+            cout << "\nError: Time cannot be zero. Division by zero is not allowed.\n";
+            system("pause");
+            system("cls");
+        }
+    } while (total_time == 0);
+
+    system("cls");
+
+    return total_distance / total_time;
+}
+
+//? 2. Average Acceleration Calculation Function
+double calculateAverageAcceleration(){
+    double v_final, v_initial, time;
+
+    do {
+        cout << "============= You selected (Average Acceleration Calculation) =============\n\n";
+        cout << "Formula: avg_acceleration = (v_final - v_initial) / t\n";
+        cout << "Where:\n";
+        cout << "  avg_acceleration = Average Acceleration\n";
+        cout << "  v_final = Final Velocity (in m/s)\n";
+        cout << "  v_initial = Initial Velocity (in m/s)\n";
+        cout << "  time = Time Interval (in seconds)\n\n";
+
+        v_initial = getValidatedInputWithRange("Enter the initial velocity (v_initial) in m/s: ", false);
+        v_final = getValidatedInputWithRange("Enter the final velocity (v_final) in m/s: ", false);
+        time = getValidatedInputWithRange("Enter the time interval (t) in seconds: ", false);
+
+        if (time == 0) {
+            cout << "\nError: Time cannot be zero. Division by zero is not allowed.\n";
+            system("pause");
+            system("cls");
+        }
+    } while (time == 0);
+
+    system("cls");
+
+    return (v_final - v_initial) / time;
+}
+
+//? 3. Centripetal Force Calculation Function
+double calculateCentripetalForce(){
+    double m, v, r;
+
+    do {
+        cout << "============= You selected (Centripetal Force Calculation) =============\n\n";
+        cout << "Formula: F_c = m * v^2 / r\n";
+        cout << "Where:\n";
+        cout << "  F_c = Centripetal Force\n";
+        cout << "  m = Mass (in kilograms)\n";
+        cout << "  v = Velocity (in m/s)\n";
+        cout << "  r = Radius (in meters)\n\n";
+
+        m = getValidatedInputWithRange("Enter the mass (m) in kilograms: ", false);
+        v = getValidatedInputWithRange("Enter the velocity (v) in m/s: ", false);
+        r = getValidatedInputWithRange("Enter the radius (r) in meters: ", false);
+
+        if (r == 0) {
+            cout << "\nError: Radius cannot be zero. Division by zero is not allowed.\n";
+            system("pause");
+            system("cls");
+        }
+    } while (r == 0);
+
+    system("cls");
+
+    return (m * v * v) / r;
+}
+
+//? 4. Torque Calculation Function
+double calculateTorque(){
+    double F, r;
+
+    F = getValidatedInputWithRange("Enter the force (F) in newtons: ", false);
+    r = getValidatedInputWithRange("Enter the lever arm distance (r) in meters: ", false);
+
+    system("cls");
+
+    return F * r;
+}
+
+//? 5. Gravitational Acceleration Calculation Function
+double calculateGravitationalAcceleration(){
+    double G, M, r;
+
+    do {
+        cout << "============= You selected (Gravitational Acceleration Calculation) =============\n\n";
+        cout << "Formula: g = GM / r^2\n";
+        cout << "Where:\n";
+        cout << "  g = Gravitational Acceleration (in m/s^2)\n";
+        cout << "  G = Gravitational constant (6.67430 × 10^-11 m^3 kg^-1 s^-2)\n";
+        cout << "  M = Mass of the central body (in kilograms)\n";
+        cout << "  r = Distance from the center of the mass (in meters)\n\n";
+
+        G = getValidatedInputWithRange("Enter the gravitational constant (G) in m^3 kg^-1 s^-2: ", false);
+        M = getValidatedInputWithRange("Enter the mass (M) of the central body in kilograms: ", false);
+        r = getValidatedInputWithRange("Enter the distance (r) from the center of the mass in meters: ", false);
+
+        if (r == 0) {
+            cout << "\nError: Distance cannot be zero. Division by zero is not allowed.\n";
+            system("pause");
+            system("cls");
+        }
+    } while (r == 0);
+
+    system("cls");
+
+    return (G * M) / (r * r);
+}
+
+//? 6. Total Mechanical Energy Calculation Function
+double calculateTotalEnergy(){
+    double KE, PE;
+
+    KE = getValidatedInputWithRange("Enter the kinetic energy (KE) in joules: ", false);
+    PE = getValidatedInputWithRange("Enter the potential energy (PE) in joules: ", false);
+
+    system("cls");
+
+    return KE + PE;
+}
+
+//? 7. Magnetic Force Calculation Function
+double calculateMagneticForce(){
+    double q, v, B;
+
+    q = getValidatedInputWithRange("Enter the electric charge (q) in coulombs: ", true);
+    v = getValidatedInputWithRange("Enter the velocity (v) in m/s: ", false);
+    B = getValidatedInputWithRange("Enter the magnetic field strength (B) in teslas: ", false);
+
+    system("cls");
+
+    return q * v * B;
+}
+
+//? 8. Inelastic Collision Calculation Function
+double calculateInelasticCollision(){
+    double m1, m2, v1_initial, v2_initial, v_final;
+
+    do {
+        cout << "============= You selected (Inelastic Collision Calculation) =============\n\n";
+        cout << "Formula: v_final = (m1 * v1_initial + m2 * v2_initial) / (m1 + m2)\n";
+        cout << "Where:\n";
+        cout << "  v_final = Final velocity after inelastic collision\n";
+        cout << "  m1 = Mass of the first object\n";
+        cout << "  m2 = Mass of the second object\n";
+        cout << "  v1_initial = Initial velocity of the first object\n";
+        cout << "  v2_initial = Initial velocity of the second object\n\n";
+
+        m1 = getValidatedInputWithRange("Enter the mass of the first object (m1) in kg: ", false);
+        m2 = getValidatedInputWithRange("Enter the mass of the second object (m2) in kg: ", false);
+        v1_initial = getValidatedInputWithRange("Enter the initial velocity of the first object (v1_initial) in m/s: ", false);
+        v2_initial = getValidatedInputWithRange("Enter the initial velocity of the second object (v2_initial) in m/s: ", false);
+
+        if (m1 == 0 || m2 == 0) {
+            cout << "\nError: Mass of objects cannot be zero. Please enter positive values.\n";
+            system("pause");
+            system("cls");
+        }
+    } while (m1 == 0 || m2 == 0);
+
+    v_final = (m1 * v1_initial + m2 * v2_initial) / (m1 + m2);
+
+    return v_final;
+}
+
+//? 9. Thermal Conductivity Calculation Function
+double calculateThermalConductivity(){
+    double Q, t, k, A, T1, T2, d;
+
+    Q = getValidatedInputWithRange("Enter the rate of heat transfer (Q/t) in W: ", false);
+    k = getValidatedInputWithRange("Enter the thermal conductivity (k) in W/m·K: ", false);
+    A = getValidatedInputWithRange("Enter the cross-sectional area (A) in square meters: ", false);
+    T1 = getValidatedInputWithRange("Enter the initial temperature (T1) in Celsius: ", false);
+    T2 = getValidatedInputWithRange("Enter the final temperature (T2) in Celsius: ", false);
+    d = getValidatedInputWithRange("Enter the thickness (d) of the material in meters: ", false);
+
+    system("cls");
+
+    return (k * A * (T1 - T2)) / d;
+}
+
+//? 10. Period of a Wave Calculation Function
+double calculateWavePeriod(){
+    double f, T;
+
+    do {
+        cout << "============= You selected (Period of a Wave Calculation) =============\n\n";
+        cout << "Formula: T = 1 / f\n";
+        cout << "Where:\n";
+        cout << "  T = Period of the wave\n";
+        cout << "  f = Frequency of the wave\n\n";
+
+        f = getValidatedInputWithRange("Enter the frequency (f) in Hz: ");
+
+        if (f == 0) {
+            cout << "\nError: Frequency cannot be zero. Division by zero is not allowed.\n";
+            system("pause");
+            system("cls");
+        }
+    } while (f == 0);
+
+    system("cls");
+
+    T = 1 / f;
+
+    return T;
+}
+
+
+
+
+
+
+
+
+//* Jesse ---------------------------------------------------------------------------------------------------
 
 
 
