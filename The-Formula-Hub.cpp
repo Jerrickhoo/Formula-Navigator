@@ -239,79 +239,79 @@ double hollowCylinderVolume();
 
 //* Marque -------------------------------------------------------------------------------------------------------------------------
 
-//? 1. Average Speed: avg_speed = total_distance / total_time
-double calculateAverageSpeed();
-
-//? 2. Average Acceleration: avg_acceleration = (v_final - v_initial) / t
-double calculateAverageAcceleration();
-
-//? 3. Centripetal Force: F_c = m * v^2 / r 
-double calculateCentripetalForce();
-
-//? 4. Torque: τ = F * r 
-double calculateTorque();
-
-//? 5. Linear Expansion: ΔL = α * L_initial * ΔT 
+//? 1. 
 
 
-//? 6. Total Energy: E_total = KE + PE 
+//? 2. 
 
 
-//? 7. Magnetic Force: F = q * v * B 
-double calculateMagneticForce();
-
-//? 8. Magnetic Flux: Φ = B * A * cos(theta) 
+//? 3. 
 
 
-//? 9. Induced EMF: EMF = -dΦ / dt 
+//? 4. 
 
 
-//? 10. Period of a Wave: T = 1 / f 
+//? 5. 
 
 
-//? 11. Intensity: I = P / A 
+//? 6. 
 
 
-//? 12. Spring Potential Energy: PE_spring = 0.5 * k * x^2 
+//? 7. 
 
 
-//? 13. Angular Momentum: L = I * ω 
+//? 8. 
 
 
-//? 14. Impulse: J = F * Δt 
+//? 9. 
 
 
-//? 15. Elastic Collision: v1_final = (m1 - m2) / (m1 + m2) * v1_initial + (2 * m2 / (m1 + m2)) * v2_initial 
+//? 10.
 
 
-//? 16. Inelastic Collision: v_final = (m1 * v1_initial + m2 * v2_initial) / (m1 + m2) 
+//? 11.
 
 
-//? 17. Mechanical Advantage: MA = output_force / input_force 
+//? 12.
 
 
-//? 18. Energy Efficiency: efficiency = (useful_energy / total_energy) * 100 
+//? 13.
 
 
-//? 19. Thermal Conductivity: Q/t = k * A * (T1 - T2) / d 
+//? 14.
 
 
-//? 20. Angular Velocity: ω = θ / t 
+//? 15.
 
 
-//? 21. Power in Rotational Motion: P = τ * ω 
+//? 16.
 
 
-//? 22. Elastic Potential Energy: E_elastic = 0.5 * k * x^2 
+//? 17.
 
 
-//? 23. Rotational Kinetic Energy: KE_rotational = 0.5 * I * ω^2 
+//? 18.
 
 
-//? 24. Gravitational Acceleration: g = GM / r^2 
+//? 19.
 
 
-//? 25. Work in Rotational Motion: W = τ * θ
+//? 20.
+
+
+//? 21.
+
+
+//? 22.
+
+
+//? 23.
+
+
+//? 24.
+
+
+//? 25. 
 
 
 //* Jesse -------------------------------------------------------------------------------------------------------------------------
@@ -448,8 +448,6 @@ int main(){
 
 
 
-
-
 //! Defining formula section ---------------------------------------------------------------------------------------------------
 
 
@@ -479,8 +477,6 @@ double getValidatedInputWithRange(const string& prompt, bool allowNegative = tru
 
 
 //!---------------------------------------------------------------------------------------------------------------------------------------------------------
-
-
 
 void showAlgebraMenu(){
     int option;
@@ -672,12 +668,12 @@ void showAlgebraMenu(){
     } while (option != 21);
 }
 
-
-
 //!---------------------------------------------------------------------------------------------------------------------------------------------------------
 
 void showGeometryMenu_2D(){
     int option;
+    double result;
+
     do {
         cout << "\t========================================= Geometry Menu 2D Menu ============================================\n";
         cout << "\t| 1.  Placeholder Title 1       |      9.  Placeholder Title 9         |     17. Placeholder Title 17      |\n";
@@ -808,6 +804,7 @@ void showGeometryMenu_2D(){
 void showGeometryMenu_3D(){
     int option;
     double result = 0;
+
     do{
         cout << "\t============================================== Geometry Menu 3D ================================================\n";
         cout << "\t|  1. Cube Surface Area           |  9. Triangular Prism Surface Area       |  17. Oblique Cone Surface Area   |\n";
@@ -865,11 +862,6 @@ void showGeometryMenu_3D(){
 
         switch (option){
         case 1:
-            result = cubeSurfaceArea();
-            cout << "============= You selected (Square of Sum) in Algebra =============\n\n";
-            cout << "The square of the Sum is: " << result << "\n\n\n";
-            system("pause");
-            system("cls");
             break;
         case 2:
             // Code / function
@@ -956,6 +948,7 @@ void showGeometryMenu_3D(){
 void showPhysicsMenu(){
     int option;
     int page = 1;
+    double result;
 
     do{
         if (page == 1){
@@ -1528,8 +1521,176 @@ double powerOfProductAlgebra(){
 
 //todo 25 geometry_2D formulas ---------------------------------------------------------------------------------------------------
 
+//? 1. Area of a Square
+double areaSquare(){
+    double side;
+
+    do{
+        cout << "============= You selected (Area of a Square) in Geometry 2d Shapes =============" << endl << endl;
+        cout << "Formula = side x side" << endl;
+
+        side = getValidatedInputWithRange("Enter value of side: ", false);
+
+        if (side == 0) {
+            cout << endl << "Error: Value can not be zero" << endl;
+            system("pause");
+            system("cls");
+        }
+    } while (side == 0);
+
+    system("cls");
+
+    return side * side;
+}
+
+//? 2. Perimeter of a Square 
+double perimeterSquare(){
+    double side;
+
+    cout << "============= You selected (Perimeter of a Square) in Geometry 2d Shapes =============" << endl << endl;
+    cout << "Formula = side x 4" << endl;
+
+    side = getValidatedInputWithRange("Enter value of side: ", false);
+    system("cls");
+
+    return side * 4;
+}
+
+//? 3. Diagonal of a Square
+double diagonalSquare(){
+    double side;
+
+    cout << "============= You selected (Diagonal of a Square) in Geometry 2d Shapes =============" << endl << endl;
+    cout << "Formula = side * sqrt(2)" << endl;
+
+    side = getValidatedInputWithRange("Enter value of side: ", false);
+    system("cls");
+
+    return side * sqrt(2);
+}
+
+//? 4. Area of a Rectangle
+double areaRectangle(){
+    double length, width;
+
+    cout << "============= You selected (Area of a Rectangle) in Geometry 2d Shapes =============" << endl << endl;
+    cout << "Formula = length * width" << endl;
+
+    length = getValidatedInputWithRange("Enter value of length: ", false);
+    width = getValidatedInputWithRange("Enter value of width: ", false);
+}
+
+//? 5. Perimeter of a Rectangle
+double perimeterRectangle(){
+
+}
+
+//? 6. Diagonal of a Rectangle
+double diagonalRectangle(){
+
+}
+
+//? 7. Area of a Circle
+double areaCircle(){
+
+}
+
+//? 8. Circumference of a Circle
+double circumferenceCircle(){
+
+}
+
+//? 9. Diameter of a Circle
+double diameterCircle(){
+
+}
+
+//? 10. Area of a Triangle
+double areaTriangle(){
+
+}
+
+//? 11. Perimeter of a Triangle
+double perimeterTriangle(){
+
+}
+
+//? 12. Hypotenuse of a Triangle
+double hypotenuseTriangle(){
+
+}
+
+//? 13. Area of an Equilateral Triangle
+double areaEquiTriangle(){
+
+}
+
+//? 14. Perimeter of an Equilateral Triangle
+double perimeterEquiTriangle(){
+
+}
+
+//? 15. Height of an Equilateral Triangle
+double heightEquiTriangle(){
+
+}
+
+//? 16. Area of a Parallelogram
+double areaParallelogram(){
+
+}
+
+//? 17. Perimeter of a Parallelogram
+double perimeterParallelogram(){
+
+}
+
+//? 18. Height of a Parallelogram
+double heightParallelogram(){
+
+}
+
+//? 19. Base of a Parallelogram
+double baseParallelogram(){
+
+}
+
+//? 20. Area of a Rhombus
+double areaRhombus(){
+
+}
+
+//? 21. Perimeter of a Rhombus
+double perimeterRhombus(){
+
+}
+
+//? 22. Area of a Trapezoid
+double areaTrapezoid(){
+
+}
+
+//? 23. Perimeter of a Trapezoid
+double perimeterTrapezoid(){
+
+}
+
+//? 24. Area of a Semicircle
+double areaSemicircle(){
+
+}
+
+//? 25. Perimeter of a Semicircle
+double perimeterSemicircle(){
+
+}
 
 
+
+//todo 25 geometry_2D formulas ---------------------------------------------------------------------------------------------------
+
+
+/*
 //todo 25 geometry_3D formulas ---------------------------------------------------------------------------------------------------
 
 //? 1. Cube Surface Area
@@ -1664,7 +1825,7 @@ double hollowCylinderVolume(){
     return M_PI * h * (R * R - r * r);
 }
 
-
+*/
 
 //todo 50 physics formulas ---------------------------------------------------------------------------------------------------
 
@@ -1903,6 +2064,311 @@ double calculateWavePeriod(){
 
 
 //* Jesse ---------------------------------------------------------------------------------------------------
+
+// 26. Force (F = m * a)
+double force() {
+    cout << "============= You selected Force in Mechanics =============\n\n";
+    cout << "Formula: F = m * a" << endl;
+    double m, a;
+
+    m = getValidatedInputWithRange("Enter The Mass (a): ", true);
+    a = getValidatedInputWithRange("Enter Second Number (a): ", true);
+
+    return m * a;
+}
+
+// 27. Kinetic Energy (KE = 0.5 * m * v^2)
+double kineticEnergy() {
+    cout << "============= You selected Kinetic Energy in Mechanics =============\n\n";
+    cout << "Formula: KE = 0.5 * m * v^2" << endl;
+    double m, v;
+
+    m = getValidatedInputWithRange("Enter The First Number (a): ", true);
+    v = getValidatedInputWithRange("Enter Second Number (a): ", true);
+
+    return 0.5 * m * pow(v, 2);
+}
+
+// 28. Potential Energy (PE = m * g * h)
+double potentialEnergy() {
+    cout << "============= You selected Potential Energy in Mechanics =============\n\n";
+    cout << "Formula: PE = m * g * h" << endl;
+    double m, g, h;
+
+    m = getValidatedInputWithRange("Enter The First Number (a): ", true);
+    g = getValidatedInputWithRange("Enter Second Number (a): ", true);
+    h = getValidatedInputWithRange("Enter Second Number (a): ", true);
+
+    return m * g * h;
+}
+
+// 29. Power (P = W / t)
+double power() {
+    cout << "============= You selected Power in Mechanics =============\n\n";
+    cout << "Formula: P = W / t" << endl;
+    double W, t;
+
+    W = getValidatedInputWithRange("Enter The First Number (a): ", true);
+    t = getValidatedInputWithRange("Enter Second Number (a): ", true);
+
+    return W / t;
+}
+
+// 30. Momentum (p = m * v)
+double momentum() {
+    cout << "============= You selected Momentum in Mechanics =============\n\n";
+    cout << "Formula: p = m * v" << endl;
+    double m, v;
+
+    m = getValidatedInputWithRange("Enter The First Number (a): ", true);
+    v = getValidatedInputWithRange("Enter The First Number (a): ", true);
+
+    return m * v;
+}
+
+// 31. Speed (speed = distance / time)
+double speed() {
+    cout << "============= You selected Speed in Mechanics =============\n\n";
+    cout << "Formula: speed = distance / time" << endl;
+    double distance, time;
+
+    distance = getValidatedInputWithRange("Enter The First Number (a): ", true);
+    time = getValidatedInputWithRange("Enter The First Number (a): ", true);
+
+    return distance / time;
+}
+
+// 32. Distance (distance = speed * time)
+double distance() {
+    cout << "============= You selected Distance in Mechanics =============\n\n";
+    cout << "Formula: distance = speed * time" << endl;
+    double speed, time;
+
+    speed = getValidatedInputWithRange("Enter The First Number (a): ", true);
+    time = getValidatedInputWithRange("Enter The First Number (a): ", true);
+
+    return speed * time;
+}
+// 33. Heat Transfer (Q = m * c * deltaT)
+double heatTransfer() {
+    cout << "============= You selected Heat Transfer in Thermodynamics =============\n\n";
+    cout << "Formula: Q = m * c * deltaT" << endl;
+    double m, c, deltaT;
+
+    m = getValidatedInputWithRange("Enter The First Number (a): ", true);
+    c = getValidatedInputWithRange("Enter The First Number (a): ", true);
+    deltaT = getValidatedInputWithRange("Enter The First Number (a): ", true);
+
+    return m * c * deltaT;
+}
+
+// 34. Efficiency (efficiency = (useful_output / total_input) * 100)
+double efficiency() {
+    cout << "============= You selected Efficiency in Thermodynamics =============\n\n";
+    cout << "Formula: efficiency = (useful_output / total_input) * 100" << endl;
+    double useful_output, total_input;
+
+    useful_output = getValidatedInputWithRange("Enter The First Number (a): ", true);
+    total_input = getValidatedInputWithRange("Enter The First Number (a): ", true);
+
+    return (useful_output / total_input) * 100;
+}
+// 35. Frequency (f = 1 / T)
+double frequency() {
+    cout << "============= You selected Frequency in Waves and Oscillations =============\n\n";
+    cout << "Formula: f = 1 / T" << endl;
+    double T;
+
+    T = getValidatedInputWithRange("Enter The First Number (a): ", true);
+
+    return 1 / T;
+}
+/*
+// 36. Wave Speed (v = f * lambda)
+double waveSpeed() {
+    cout << "============= You selected Wave Speed in Waves and Oscillations =============\n\n";
+    cout << "Formula: v = f * lambda" << endl;
+double f, lamdba;
+
+     f = getValidatedInputWithRange("Enter The First Number (a): ", true);
+     lambda = getValidatedInputWithRange("Enter The First Number (a): ", true);
+
+    return f * lambda;
+}
+*/
+// 37. Ohm's Law (V = I * R)
+double ohmsLaw() {
+    cout << "============= You selected Ohm's Law in Electricity and Magnetism =============\n\n";
+    cout << "Formula: V = I * R" << endl;
+    double I, R;
+
+    I = getValidatedInputWithRange("Enter The First Number (a): ", true);
+    R = getValidatedInputWithRange("Enter The First Number (a): ", true);
+
+    return I * R;
+}
+
+// 38. Electrical Power (P = V * I)
+double electricalPower() {
+    cout << "============= You selected Electrical Power in Electricity and Magnetism =============\n\n";
+    cout << "Formula: P = V * I" << endl;
+    double V, I;
+
+    V = getValidatedInputWithRange("Enter The First Number (a): ", true);
+    I = getValidatedInputWithRange("Enter The First Number (a): ", true);
+
+    return V * I;
+}
+
+// 39. Capacitance (C = Q / V)
+double capacitance() {
+    cout << "============= You selected Capacitance in Electricity and Magnetism =============\n\n";
+    cout << "Formula: C = Q / V" << endl;
+    double Q, V;
+
+    Q = getValidatedInputWithRange("Enter The First Number (a): ", true);
+    V = getValidatedInputWithRange("Enter The First Number (a): ", true);
+
+    return Q / V;
+}
+/*
+// 40. Energy in Capacitor (U = 0.5 * C * V^2)
+double energyInCapacitor() {
+    cout << "============= You selected Energy in Capacitor in Electricity and Magnetism =============\n\n";
+    cout << "Formula: U = 0.5 * C * V^2" << endl;
+double c, V;
+
+    c = getValidatedInputWithRange("Enter The First Number (a): ", true);
+    V = getValidatedInputWithRange("Enter The First Number (a): ", true);
+
+    return 0.5 * C * pow(V, 2);
+}
+*/
+
+// 41. Charge (charge = current * time)
+double charge() {
+    cout << "============= You selected Charge in Electricity and Magnetism =============\n\n";
+    cout << "Formula: charge = current * time" << endl;
+    double current, time;
+
+    current = getValidatedInputWithRange("Enter The First Number (a): ", true);
+    time = getValidatedInputWithRange("Enter The First Number (a): ", true);
+
+    return current * time;
+}
+/* CHANGE VARIABLE DO
+// 42. Magnification (M = -di / do)
+double magnification() {
+    cout << "============= You selected Magnification in Optics =============\n\n";
+    cout << "Formula: M = -di / do" << endl;
+double di, do;
+
+     di = getValidatedInputWithRange("Enter The First Number (a): ", true);
+     do = getValidatedInputWithRange("Enter The First Number (a): ", true);
+
+    return -di / do;
+
+}*/
+// 43. Einstein's Energy-Mass Relation (E = m * c^2)
+double einsteinEnergyMassRelation() {
+    cout << "============= You selected Einstein's Energy-Mass Relation in Modern Physics =============\n\n";
+    cout << "Formula: E = m * c^2" << endl;
+    double m, c;
+
+    m = getValidatedInputWithRange("Enter The First Number (a): ", true);
+    c = getValidatedInputWithRange("Enter The First Number (a): ", true);
+
+    return m * pow(c, 2);
+}
+
+// 44. de Broglie Wavelength (lambda = h / p)
+double deBroglieWavelength() {
+    cout << "============= You selected de Broglie Wavelength in Modern Physics =============\n\n";
+    cout << "Formula: lambda = h / p" << endl;
+    double h, p;
+
+    h = getValidatedInputWithRange("Enter The First Number (a): ", true);
+    p = getValidatedInputWithRange("Enter The First Number (a): ", true);
+
+    return h / p;
+}
+
+// 45. Photoelectric Equation (Ek = h * f - phi)
+double photoelectricEquation() {
+    cout << "============= You selected Photoelectric Equation in Modern Physics =============\n\n";
+    cout << "Formula: Ek = h * f - phi" << endl;
+    double h, f, phi;
+
+    h = getValidatedInputWithRange("Enter The First Number (a): ", true);
+    f = getValidatedInputWithRange("Enter The First Number (a): ", true);
+    phi = getValidatedInputWithRange("Enter The First Number (a): ", true);
+
+    return h * f - phi;
+}
+// 46. Density (density = mass / volume)
+double density() {
+    cout << "============= You selected Density in Other Simple Physics Formulas =============\n\n";
+    cout << "Formula: density = mass / volume" << endl;
+    double mass, volume;
+
+    mass = getValidatedInputWithRange("Enter The First Number (a): ", true);
+    volume = getValidatedInputWithRange("Enter The First Number (a): ", true);
+
+    return mass / volume;
+}
+
+// 47. Pressure (pressure = force / area)
+double pressure() {
+    cout << "============= You selected Pressure in Other Simple Physics Formulas =============\n\n";
+    cout << "Formula: pressure = force / area" << endl;
+    double force, area;
+
+    force = getValidatedInputWithRange("Enter The First Number (a): ", true);
+    area = getValidatedInputWithRange("Enter The First Number (a): ", true);
+
+    return force / area;
+}
+
+// 48. Acceleration (acceleration = (final_velocity - initial_velocity) / time)
+double acceleration() {
+    cout << "============= You selected Acceleration in Other Simple Physics Formulas =============\n\n";
+    cout << "Formula: acceleration = (final_velocity - initial_velocity) / time" << endl;
+    double final_velocity, initial_velocity, time;
+
+    final_velocity = getValidatedInputWithRange("Enter The First Number (a): ", true);
+    initial_velocity = getValidatedInputWithRange("Enter The First Number (a): ", true);
+    time = getValidatedInputWithRange("Enter The First Number (a): ", true);
+
+    return (final_velocity - initial_velocity) / time;
+}
+
+// 49. Hooke's Law (force = k * displacement)
+double hookesLaw() {
+    cout << "============= You selected Hooke's Law in Other Simple Physics Formulas =============\n\n";
+    cout << "Formula: force = k * displacement" << endl;
+    double k, displacement;
+
+    k = getValidatedInputWithRange("Enter The First Number (a): ", true);
+    displacement = getValidatedInputWithRange("Enter The First Number (a): ", true);
+
+    return k * displacement;
+}
+
+// 50. Weight (weight = mass * g)
+double weight() {
+    cout << "============= You selected Weight in Other Simple Physics Formulas =============\n\n";
+    cout << "Formula: weight = mass * g" << endl;
+    double mass, g;
+
+    mass = getValidatedInputWithRange("Enter The First Number (a): ", true);
+    g = getValidatedInputWithRange("Enter The First Number (a): ", true);
+
+    return mass * g;
+}
+
+
+
+
 
 
 
